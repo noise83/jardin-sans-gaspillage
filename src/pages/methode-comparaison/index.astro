@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import Hero from "../../components/Hero.astro";
+---
+
+<BaseLayout
+  title="Méthode de comparaison"
+  description="La méthode éditoriale utilisée pour comparer les récupérateurs d'eau, cuves et équipements d'arrosage sans prétendre à de faux tests."
+>
+  <Breadcrumb items={[{ label: "Méthode de comparaison" }]} />
+  <Hero
+    eyebrow="Transparence"
+    title="Comment nous comparons les produits"
+    lead="Les comparatifs doivent rester utiles et honnêtes : critères visibles, limites indiquées, et distinction claire entre analyse documentaire, retour d'usage et test réel."
+  />
+  <section class="section">
+    <div class="container legal">
+      <h2>Critères retenus</h2>
+      <p>Nous regardons la capacité, le type d'installation, la robustesse annoncée, les accessoires inclus, l'usage adapté, le prix, la disponibilité et les limites pratiques.</p>
+      <p>Un produit ne sera jamais présenté comme testé si ce n'est pas le cas. Les liens d'affiliation seront signalés quand ils seront ajoutés.</p>
+      <a href="/comparatifs/meilleur-recuperateur-eau-pluie/">Retour au comparatif</a>
+    </div>
+  </section>
+</BaseLayout>

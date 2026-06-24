@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+---
+
+<BaseLayout
+  title="Politique de confidentialité"
+  description="Politique de confidentialité du site Jardin Sans Gaspillage."
+>
+  <Breadcrumb items={[{ label: "Politique de confidentialité" }]} />
+  <section class="hero">
+    <div class="container legal">
+      <h1>Politique de confidentialité</h1>
+      <p>Cette première version du site ne prévoit pas de compte utilisateur ni de formulaire actif.</p>
+      <h2>Données personnelles</h2>
+      <p>Aucune donnée personnelle n'est collectée par défaut dans cette base statique.</p>
+      <h2>Mesure d'audience et affiliation</h2>
+      <p>Tout outil de mesure ou lien d'affiliation ajouté plus tard devra être documenté ici avec les informations utiles aux visiteurs.</p>
+    </div>
+  </section>
+</BaseLayout>

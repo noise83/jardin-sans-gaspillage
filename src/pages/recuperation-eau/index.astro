@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import Hero from "../../components/Hero.astro";
+import Callout from "../../components/Callout.astro";
+---
+
+<BaseLayout
+  title="Récupération d'eau de pluie au jardin"
+  description="Guide pour estimer, stocker et utiliser l'eau de pluie au jardin avec une cuve adaptée et une installation simple."
+>
+  <Breadcrumb items={[{ label: "Récupération d'eau" }]} />
+  <Hero
+    eyebrow="Pilier"
+    title="Récupérer l'eau de pluie sans surdimensionner"
+    lead="Une bonne réserve commence par une estimation réaliste : toiture disponible, pluie locale, pertes, besoins du jardin et place autour de la maison."
+  />
+  <section class="section">
+    <div class="container legal">
+      <h2>Les points à vérifier</h2>
+      <p>La surface de toiture donne une première idée du volume annuel récupérable. Un mètre carré de toiture recevant un millimètre de pluie correspond à environ un litre d'eau avant pertes.</p>
+      <p>Le collecteur doit rester accessible, la cuve posée sur un support stable et l'eau protégée de la lumière pour limiter les algues.</p>
+      <Callout title="Ordre de grandeur">
+        <p>Pour un potager familial, une cuve de 650 à 1 000 litres peut déjà rendre service, mais la régularité de la pluie compte autant que le volume total annuel.</p>
+      </Callout>
+      <div class="link-row">
+        <a href="/outils/calculateur-taille-cuve/">Calculer une taille de cuve</a>
+        <a href="/comparatifs/meilleur-recuperateur-eau-pluie/">Comparer les récupérateurs</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

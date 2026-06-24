@@ -1,0 +1,34 @@
+[
+  {
+    "nom": "Cuve murale compacte 300 L",
+    "capacite": "300 L",
+    "usage": "Petit jardin, terrasse, arrosage ponctuel",
+    "pointsForts": "Faible encombrement, installation simple, convient aux descentes de gouttière visibles",
+    "limites": "Réserve limitée en été, robinet et collecteur à vérifier selon les modèles",
+    "prixIndicatif": "80 à 180 €"
+  },
+  {
+    "nom": "Récupérateur cylindrique 650 L",
+    "capacite": "650 L",
+    "usage": "Potager familial et massifs proches de la maison",
+    "pointsForts": "Bon compromis capacité/prix, entretien accessible, large disponibilité",
+    "limites": "Volume encore juste pour les longues périodes sèches",
+    "prixIndicatif": "150 à 320 €"
+  },
+  {
+    "nom": "Cuve aérienne renforcée 1 000 L",
+    "capacite": "1 000 L",
+    "usage": "Jardin moyen, arrosage régulier, réserve de sécurité",
+    "pointsForts": "Capacité confortable, raccords fréquents, compatible pompe de surface",
+    "limites": "Aspect plus technique, nécessite un support stable et de la place",
+    "prixIndicatif": "220 à 450 €"
+  },
+  {
+    "nom": "Cuve enterrée 3 000 L",
+    "capacite": "3 000 L",
+    "usage": "Grand jardin, potager conséquent, autonomie longue",
+    "pointsForts": "Grande réserve, eau protégée de la lumière, intégration discrète",
+    "limites": "Pose plus lourde, terrassement, budget global élevé",
+    "prixIndicatif": "1 200 à 3 500 € hors pose"
+  }
+]

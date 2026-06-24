@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import SectionIntro from "../components/SectionIntro.astro";
+import Callout from "../components/Callout.astro";
+---
+
+<BaseLayout
+  title="Récupérer l'eau et jardiner avec moins"
+  description="Guides pratiques pour récupérer l'eau de pluie, arroser moins, choisir une cuve et concevoir un jardin plus sobre en eau."
+>
+  <Hero
+    eyebrow="Carnet de terrain"
+    title="Jardiner avec moins d'eau, sans perdre le fil du vivant"
+    lead="Jardin Sans Gaspillage aide à choisir une cuve, réduire l'arrosage, adapter les plantations et comparer le matériel avec des critères lisibles."
+    primaryHref="/outils/calculateur-taille-cuve/"
+    primaryLabel="Estimer une cuve"
+    secondaryHref="/comparatifs/meilleur-recuperateur-eau-pluie/"
+    secondaryLabel="Voir le comparatif"
+  />
+
+  <SectionIntro
+    eyebrow="Commencer"
+    title="Trois leviers avant d'acheter du matériel"
+    text="Observer les besoins réels du jardin, stocker l'eau qui tombe déjà sur la toiture, puis distribuer lentement au bon endroit. Le bon équipement dépend de cette chaîne complète, pas seulement du volume annoncé."
+  />
+
+  <section class="section">
+    <div class="container grid three">
+      <article class="panel">
+        <h2>Récupération d'eau</h2>
+        <p>Comprendre les volumes récupérables, les cuves aériennes ou enterrées, les collecteurs et les points de vigilance.</p>
+        <a href="/recuperation-eau/">Lire le guide</a>
+      </article>
+      <article class="panel">
+        <h2>Arrosage économe</h2>
+        <p>Passer d'un arrosage réflexe à un arrosage utile : paillage, goutte-à-goutte, oyas et horaires adaptés.</p>
+        <a href="/arrosage-econome/">Réduire l'arrosage</a>
+      </article>
+      <article class="panel">
+        <h2>Jardin sec</h2>
+        <p>Concevoir un jardin plus résilient avec des sols couverts, des plantes sobres et des zones d'usage bien choisies.</p>
+        <a href="/jardin-sec/">Préparer le jardin</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <Callout title="Transparence">
+        <p>Les produits présentés sont des exemples de travail. Aucun lien d'affiliation n'est actif dans cette première version et aucun produit n'est présenté comme testé.</p>
+      </Callout>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,55 @@
+<form class="calculator" id="tank-calculator">
+  <label>
+    Surface de toiture en m²
+    <input name="roof" type="number" min="1" step="1" value="60" />
+  </label>
+  <label>
+    Pluviométrie annuelle en mm
+    <input name="rain" type="number" min="1" step="1" value="750" />
+  </label>
+  <label>
+    Coefficient de récupération
+    <input name="coefficient" type="number" min="0.1" max="1" step="0.05" value="0.8" />
+  </label>
+  <label>
+    Besoin d'arrosage estimé en litres/an
+    <input name="need" type="number" min="0" step="100" value="12000" />
+  </label>
+  <button type="submit">Calculer</button>
+  <output class="calculator__result" id="tank-result" aria-live="polite">
+    Renseignez vos valeurs puis lancez le calcul.
+  </output>
+</form>
+
+<script>
+  const form = document.querySelector("#tank-calculator");
+  const result = document.querySelector("#tank-result");
+
+  const suggestTank = (usableLiters, need) => {
+    const target = Math.min(usableLiters * 0.08, need * 0.35 || usableLiters * 0.08);
+    if (target <= 1000) return "1 000 litres";
+    if (target <= 3000) return "3 000 litres";
+    if (target <= 5000) return "5 000 litres";
+    if (target <= 10000) return "10 000 litres";
+    return "plus de 10 000 litres, à dimensionner avec un professionnel";
+  };
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const roof = Number(data.get("roof"));
+    const rain = Number(data.get("rain"));
+    const coefficient = Number(data.get("coefficient"));
+    const need = Number(data.get("need"));
+    const recovered = Math.max(0, roof * rain * coefficient);
+    const covered = need > 0 ? Math.min(100, (recovered / need) * 100) : 0;
+    const capacity = suggestTank(recovered, need);
+
+    if (result) {
+      result.textContent =
+        `Volume récupérable estimé : ${Math.round(recovered).toLocaleString("fr-FR")} litres/an. ` +
+        `Cela couvre environ ${Math.round(covered)} % du besoin indiqué. ` +
+        `Capacité de cuve à étudier : ${capacity}.`;
+    }
+  });
+</script>

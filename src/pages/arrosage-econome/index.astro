@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import Hero from "../../components/Hero.astro";
+import Callout from "../../components/Callout.astro";
+---
+
+<BaseLayout
+  title="Arrosage économe pour potager et jardin"
+  description="Méthodes simples pour réduire l'arrosage au jardin : paillage, goutte-à-goutte, oyas, horaires et priorités."
+>
+  <Breadcrumb items={[{ label: "Arrosage économe" }]} />
+  <Hero
+    eyebrow="Pilier"
+    title="Arroser moins, mais arroser mieux"
+    lead="L'arrosage économe combine sol couvert, apports lents et priorités claires. Le but n'est pas de priver le jardin, mais d'éviter les pertes."
+  />
+  <section class="section">
+    <div class="container legal">
+      <h2>Les gestes qui changent le bilan</h2>
+      <p>Un paillage épais limite l'évaporation, protège la vie du sol et espace les arrosages. Le goutte-à-goutte et les oyas apportent l'eau près des racines, sans mouiller inutilement les allées.</p>
+      <p>Les plantes récemment installées restent prioritaires. Les massifs établis peuvent être conduits plus sobrement si le sol est amélioré et couvert.</p>
+      <Callout title="Bon réflexe">
+        <p>Arroser tôt le matin, lentement, puis vérifier l'humidité sous le paillage avant de recommencer.</p>
+      </Callout>
+      <div class="link-row">
+        <a href="/jardin-sec/">Préparer un jardin plus sec</a>
+        <a href="/recuperation-eau/">Stocker l'eau de pluie</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

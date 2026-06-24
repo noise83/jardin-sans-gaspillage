@@ -1,0 +1,17 @@
+---
+interface Props {
+  name: string;
+  capacity: string;
+  use: string;
+  limit: string;
+}
+
+const { name, capacity, use, limit } = Astro.props;
+---
+
+<article class="product-card">
+  <p class="product-card__meta">{capacity}</p>
+  <h3>{name}</h3>
+  <p>{use}</p>
+  <p><strong>À vérifier :</strong> {limit}</p>
+</article>

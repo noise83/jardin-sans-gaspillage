@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../../components/Breadcrumb.astro";
+import Hero from "../../../components/Hero.astro";
+import CalculatorTank from "../../../components/CalculatorTank.astro";
+---
+
+<BaseLayout
+  title="Calculateur de taille de cuve"
+  description="Calculez le volume d'eau de pluie récupérable par an et obtenez une suggestion de capacité de cuve pour le jardin."
+>
+  <Breadcrumb items={[{ label: "Outils", href: "/outils/calculateur-taille-cuve/" }, { label: "Calculateur de taille de cuve" }]} />
+  <Hero
+    eyebrow="Outil"
+    title="Estimer la bonne taille de cuve"
+    lead="Entrez une surface de toiture, une pluviométrie annuelle, un coefficient de récupération et un besoin d'arrosage pour obtenir un ordre de grandeur."
+  />
+  <section class="section">
+    <div class="container">
+      <CalculatorTank />
+    </div>
+  </section>
+</BaseLayout>

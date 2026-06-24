@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import Hero from "../../components/Hero.astro";
+import Callout from "../../components/Callout.astro";
+---
+
+<BaseLayout
+  title="Jardin sec et plantes sobres en eau"
+  description="Principes pour concevoir un jardin sec, résilient et agréable avec moins d'arrosage et des choix de plantation adaptés."
+>
+  <Breadcrumb items={[{ label: "Jardin sec" }]} />
+  <Hero
+    eyebrow="Pilier"
+    title="Composer un jardin qui supporte mieux les périodes sèches"
+    lead="Un jardin sec se prépare par zones : sols couverts, plantes adaptées, ombre utile, circulation de l'eau et arrosage réservé aux moments décisifs."
+  />
+  <section class="section">
+    <div class="container legal">
+      <h2>Penser par usages</h2>
+      <p>Les zones proches de la maison peuvent rester plus entretenues, tandis que les bordures et talus accueillent des plantes sobres. Cette hiérarchie évite d'arroser tout le terrain de la même façon.</p>
+      <p>La réussite dépend souvent du sol : apport de matière organique, couverture permanente et plantation à l'automne quand c'est possible.</p>
+      <Callout title="Priorité">
+        <p>Installer petit, arroser profondément la première année, puis réduire progressivement quand les racines sont descendues.</p>
+      </Callout>
+      <div class="link-row">
+        <a href="/arrosage-econome/">Optimiser l'arrosage</a>
+        <a href="/outils/calculateur-taille-cuve/">Dimensionner une réserve</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

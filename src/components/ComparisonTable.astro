@@ -1,0 +1,43 @@
+---
+interface Product {
+  nom: string;
+  capacite: string;
+  usage: string;
+  pointsForts: string;
+  limites: string;
+  prixIndicatif: string;
+}
+
+interface Props {
+  products: Product[];
+}
+
+const { products } = Astro.props;
+---
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Produit</th>
+        <th>Capacité</th>
+        <th>Usage conseillé</th>
+        <th>Points forts</th>
+        <th>Limites</th>
+        <th>Prix indicatif</th>
+      </tr>
+    </thead>
+    <tbody>
+      {products.map((product) => (
+        <tr>
+          <td><strong>{product.nom}</strong></td>
+          <td>{product.capacite}</td>
+          <td>{product.usage}</td>
+          <td>{product.pointsForts}</td>
+          <td>{product.limites}</td>
+          <td>{product.prixIndicatif}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

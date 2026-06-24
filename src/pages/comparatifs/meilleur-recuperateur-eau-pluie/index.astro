@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../../components/Breadcrumb.astro";
+import Hero from "../../../components/Hero.astro";
+import Callout from "../../../components/Callout.astro";
+import ComparisonTable from "../../../components/ComparisonTable.astro";
+import ProductCard from "../../../components/ProductCard.astro";
+import products from "../../../data/recuperateurs-eau.json";
+---
+
+<BaseLayout
+  title="Meilleur récupérateur d'eau de pluie"
+  description="Comparatif éditorial de récupérateurs d'eau de pluie selon capacité, installation, robustesse, usage, prix et limites."
+>
+  <Breadcrumb items={[{ label: "Comparatifs", href: "/comparatifs/meilleur-recuperateur-eau-pluie/" }, { label: "Meilleur récupérateur d'eau de pluie" }]} />
+  <Hero
+    eyebrow="Comparatif"
+    title="Quel récupérateur d'eau de pluie choisir ?"
+    lead="Cette première grille compare des familles de cuves réalistes. Elle sert de base éditoriale avant l'ajout de fiches produits et de liens d'affiliation transparents."
+  />
+  <section class="section">
+    <div class="container">
+      <Callout title="Méthode">
+        <p>Les produits ci-dessous sont des placeholders réalistes. Ils ne sont pas présentés comme testés. Les critères utilisés sont la capacité, l'installation, la robustesse perçue, l'usage, le prix indicatif, la disponibilité et les limites.</p>
+      </Callout>
+      <ComparisonTable products={products} />
+    </div>
+  </section>
+  <section class="section">
+    <div class="container grid three">
+      {products.slice(0, 3).map((product) => (
+        <ProductCard
+          name={product.nom}
+          capacity={product.capacite}
+          use={product.usage}
+          limit={product.limites}
+        />
+      ))}
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <a href="/methode-comparaison/">Lire la méthode de comparaison</a>
+    </div>
+  </section>
+</BaseLayout>
