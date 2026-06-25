@@ -21,15 +21,34 @@ const {
 ---
 
 <section class="hero">
-  <div class="container">
-    {eyebrow && <p class="hero__eyebrow">{eyebrow}</p>}
-    <h1>{title}</h1>
-    <p class="hero__lead">{lead}</p>
-    {(primaryHref || secondaryHref) && (
-      <div class="hero__actions">
-        {primaryHref && <a class="button" href={primaryHref}>{primaryLabel}</a>}
-        {secondaryHref && <a class="button secondary" href={secondaryHref}>{secondaryLabel}</a>}
-      </div>
-    )}
+  <div class="container hero__grid">
+    <div class="hero__content">
+      {eyebrow && <p class="hero__eyebrow">{eyebrow}</p>}
+      <h1>{title}</h1>
+      <p class="hero__lead">{lead}</p>
+      {(primaryHref || secondaryHref) && (
+        <div class="hero__actions">
+          {primaryHref && <a class="button" href={primaryHref}>{primaryLabel}</a>}
+          {secondaryHref && <a class="button secondary" href={secondaryHref}>{secondaryLabel}</a>}
+        </div>
+      )}
+    </div>
+    <aside class="hero__diagnostic" aria-label="Diagnostic rapide">
+      <p class="hero__diagnostic-label">Diagnostic rapide</p>
+      <dl>
+        <div>
+          <dt>Toiture</dt>
+          <dd>surface utile et filtre propre</dd>
+        </div>
+        <div>
+          <dt>Stockage</dt>
+          <dd>volume adapté aux besoins réels</dd>
+        </div>
+        <div>
+          <dt>Arrosage</dt>
+          <dd>apport lent, localisé, mesuré</dd>
+        </div>
+      </dl>
+    </aside>
   </div>
 </section>
