@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+---
+
+<BaseLayout
+  title="Transparence et affiliation"
+  description="Politique de transparence de Jardin Sans Gaspillage sur l'affiliation, les comparatifs et les liens commerciaux."
+>
+  <Breadcrumb items={[{ label: "Transparence et affiliation" }]} />
+  <section class="hero">
+    <div class="container legal">
+      <p class="eyebrow">Transparence</p>
+      <h1>Affiliation et indépendance éditoriale</h1>
+      <p>
+        Jardin Sans Gaspillage peut, à terme, utiliser des liens d'affiliation ou
+        vendre des emplacements de liens. Ces éléments devront être signalés de
+        manière claire lorsqu'ils seront actifs.
+      </p>
+      <h2>Ce que cela change pour le lecteur</h2>
+      <p>
+        Un lien affilié peut générer une commission si un achat est réalisé après
+        clic, sans coût supplémentaire annoncé pour le lecteur. Cette possibilité
+        ne doit pas modifier les critères de sélection ni masquer les limites des
+        produits.
+      </p>
+      <h2>Méthode de comparaison</h2>
+      <p>
+        Les comparatifs reposent sur des critères explicites : capacité,
+        installation, robustesse annoncée, usage adapté, prix, disponibilité et
+        limites pratiques.
+      </p>
+      <p>
+        <a href="/methode-comparaison/">Lire la méthode de comparaison</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

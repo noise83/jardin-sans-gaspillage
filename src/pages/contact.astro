@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+---
+
+<BaseLayout
+  title="Contact"
+  description="Contacter Jardin Sans Gaspillage pour une question éditoriale, une correction ou une proposition liée au jardinage sobre en eau."
+>
+  <Breadcrumb items={[{ label: "Contact" }]} />
+  <section class="hero">
+    <div class="container legal">
+      <p class="eyebrow">Contact</p>
+      <h1>Contacter Jardin Sans Gaspillage</h1>
+      <p>
+        Pour signaler une erreur, proposer un sujet ou poser une question sur la
+        ligne éditoriale du site, utilisez l'adresse de contact qui sera ajoutée
+        avant la mise en production publique.
+      </p>
+      <h2>Demandes éditoriales</h2>
+      <p>
+        Les demandes utiles concernent la récupération d'eau, l'arrosage économe,
+        le jardin sec, les équipements sobres ou la correction d'une information.
+      </p>
+      <h2>Partenariats</h2>
+      <p>
+        Les propositions commerciales doivent rester compatibles avec une
+        information claire pour les lecteurs. Aucun produit ne sera présenté
+        comme testé si ce n'est pas le cas.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

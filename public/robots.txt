@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jardinsansgaspillage.fr/sitemap-index.xml
