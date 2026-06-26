@@ -1,0 +1,100 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import Hero from "../../components/Hero.astro";
+import Callout from "../../components/Callout.astro";
+---
+
+<BaseLayout
+  title="Comparatifs jardin économe en eau : cuves, oyas, goutte-à-goutte"
+  description="Retrouvez les comparatifs Jardin Sans Gaspillage pour choisir une cuve, un récupérateur d’eau, des oyas, un goutte-à-goutte ou une pompe adaptée."
+>
+  <Breadcrumb items={[{ label: "Comparatifs" }]} />
+  <Hero
+    eyebrow="Comparatifs"
+    title="Comparatifs pour jardiner avec moins d’eau"
+    lead="Les comparatifs Jardin Sans Gaspillage aident à choisir selon l’usage réel : petit jardin, potager, terrasse, grande capacité, budget, place disponible et simplicité d’installation."
+  />
+
+  <section class="section">
+    <div class="container legal">
+      <p>
+        Un bon équipement n’est pas forcément le plus gros, le plus cher ou le
+        plus visible dans les boutiques. Le bon choix dépend d’abord du jardin :
+        surface à arroser, toiture disponible, accès à la gouttière, volume utile,
+        entretien possible et limites d’installation.
+      </p>
+      <p>
+        Les comparatifs du site sont donc construits comme des aides de choix
+        éditoriales. Ils ne présentent pas les produits comme testés si aucun test
+        réel n’a été mené.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container legal">
+      <h2>Comparatif disponible</h2>
+      <article class="panel">
+        <p class="panel__kicker">Cuves et récupération d’eau</p>
+        <h3>Meilleur récupérateur d’eau de pluie</h3>
+        <p>
+          Comparer les récupérateurs compacts, cuves murales, modèles 500 L,
+          cuves 1000 L, IBC et solutions enterrées.
+        </p>
+        <a href="/comparatifs/meilleur-recuperateur-eau-pluie/">Lire le comparatif</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container legal">
+      <h2>Comparatifs à venir</h2>
+      <p>
+        Ces pages seront publiées progressivement, avec la même logique : partir
+        des usages concrets avant de parler matériel.
+      </p>
+      <ul>
+        <li>Oyas pour potager</li>
+        <li>Kit goutte-à-goutte pour récupérateur d’eau</li>
+        <li>Pompe solaire pour cuve</li>
+        <li>Cuve 1000 L pour jardin</li>
+        <li>Collecteur de gouttière pour récupérateur</li>
+        <li>Programmateur d’arrosage économe</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container legal">
+      <Callout title="Notre méthode">
+        <p>
+          Les critères regardés sont l’usage réel, la capacité, l’installation,
+          la robustesse annoncée, les accessoires inclus, les limites, le prix
+          indicatif, la disponibilité et la transparence affiliation.
+        </p>
+        <p>
+          Lire la <a href="/methode-comparaison/">méthode de comparaison</a> et
+          la page <a href="/affiliation/">affiliation</a>.
+        </p>
+      </Callout>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container legal">
+      <h2>Construire le bon choix</h2>
+      <p>
+        Pour choisir un équipement cohérent, il faut relier récupération d’eau,
+        arrosage et adaptation du jardin. Ces guides posent les bases avant de
+        comparer les produits.
+      </p>
+      <div class="link-row">
+        <a href="/recuperation-eau/">Récupération d’eau</a>
+        <a href="/arrosage-econome/">Arrosage économe</a>
+        <a href="/jardin-sec/">Jardin sec</a>
+        <a href="/outils/calculateur-taille-cuve/">Calculateur de cuve</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
