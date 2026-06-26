@@ -6,12 +6,109 @@ import Callout from "../../../components/Callout.astro";
 import ComparisonTable from "../../../components/ComparisonTable.astro";
 import ProductCard from "../../../components/ProductCard.astro";
 import products from "../../../data/products/recuperateurs-eau.json";
+
+const pageUrl = "https://jardinsansgaspillage.fr/comparatifs/meilleur-recuperateur-eau-pluie/";
+const articleTitle = "Meilleur récupérateur d’eau de pluie : comparatif et guide de choix";
+const articleDescription = "Comparez les récupérateurs d’eau de pluie selon votre jardin, votre toiture et vos besoins : 300 L, 500 L, 1000 L, cuve murale, IBC ou enterrée.";
+const siteName = "Jardin Sans Gaspillage";
+const faqItems = [
+  {
+    question: "Quel est le meilleur récupérateur d’eau de pluie ?",
+    answer: "Le meilleur récupérateur dépend de l’usage. Pour une terrasse, un modèle compact suffit. Pour un jardin familial, 500 L est souvent un bon compromis. Pour un potager régulier, 1000 L ou plus devient plus cohérent.",
+  },
+  {
+    question: "Est-ce qu’un récupérateur de 300 L suffit ?",
+    answer: "Oui pour quelques plantes, une terrasse ou un petit jardin. Pour un potager familial, 300 L sont généralement une réserve d’appoint, pas une vraie autonomie.",
+  },
+  {
+    question: "Quelle capacité choisir pour un potager ?",
+    answer: "Pour un petit potager, 500 L peuvent déjà aider. Pour un potager plus régulier, 1000 L ou plus offrent une marge plus confortable, surtout si la toiture permet de récupérer assez d’eau.",
+  },
+  {
+    question: "Faut-il vider un récupérateur d’eau en hiver ?",
+    answer: "Dans les régions exposées au gel, il est prudent de vidanger ou de protéger la cuve pour éviter les déformations, fissures et dégâts sur le robinet ou les raccords.",
+  },
+  {
+    question: "Comment éviter les moustiques ?",
+    answer: "Choisissez une cuve fermée, évitez l’eau stagnante à l’air libre, utilisez un collecteur adapté et vérifiez que les ouvertures sont protégées.",
+  },
+  {
+    question: "Faut-il une pompe avec une cuve ?",
+    answer: "Non pour remplir un arrosoir. Oui éventuellement pour alimenter un tuyau long, un goutte-à-goutte ou une zone située plus loin que la cuve.",
+  },
+  {
+    question: "Une cuve IBC est-elle une bonne idée ?",
+    answer: "Oui si l’objectif principal est le volume au meilleur prix. Elle est moins esthétique, mais très intéressante pour une zone technique ou un potager.",
+  },
+  {
+    question: "Peut-on arroser les légumes avec de l’eau de pluie ?",
+    answer: "Oui pour un usage d’arrosage au jardin, en restant prudent : eau non potable, cuve propre, arrosage de préférence au pied des plantes, et pas d’usage alimentaire ou sanitaire.",
+  },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://jardinsansgaspillage.fr/",
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Comparatifs",
+          "item": "https://jardinsansgaspillage.fr/comparatifs/",
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Meilleur récupérateur d’eau de pluie",
+          "item": pageUrl,
+        },
+      ],
+    },
+    {
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": pageUrl,
+      },
+      "headline": articleTitle,
+      "description": articleDescription,
+      "author": {
+        "@type": "Organization",
+        "name": siteName,
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": siteName,
+      },
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqItems.map((item) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer,
+        },
+      })),
+    },
+  ],
+};
 ---
 
 <BaseLayout
-  title="Meilleur récupérateur d’eau de pluie : comparatif et guide de choix"
-  description="Comparez les récupérateurs d’eau de pluie selon votre jardin, votre toiture et vos besoins : 300 L, 500 L, 1000 L, cuve murale, IBC ou enterrée."
+  title={articleTitle}
+  description={articleDescription}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   <Breadcrumb items={[{ label: "Comparatifs", href: "/comparatifs/meilleur-recuperateur-eau-pluie/" }, { label: "Meilleur récupérateur d'eau de pluie" }]} />
   <Hero
     eyebrow="Comparatif"
