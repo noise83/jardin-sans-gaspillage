@@ -5,38 +5,561 @@ import Hero from "../../../components/Hero.astro";
 import Callout from "../../../components/Callout.astro";
 import ComparisonTable from "../../../components/ComparisonTable.astro";
 import ProductCard from "../../../components/ProductCard.astro";
-import affiliateConfig from "../../../data/affiliate-config.json";
 import products from "../../../data/products/recuperateurs-eau.json";
 ---
 
 <BaseLayout
-  title="Meilleur récupérateur d'eau de pluie"
-  description="Comparatif éditorial de récupérateurs d'eau de pluie selon capacité, installation, robustesse, usage, prix et limites."
+  title="Meilleur récupérateur d’eau de pluie : comparatif et guide de choix"
+  description="Comparez les récupérateurs d’eau de pluie selon votre jardin, votre toiture et vos besoins : 300 L, 500 L, 1000 L, cuve murale, IBC ou enterrée."
 >
   <Breadcrumb items={[{ label: "Comparatifs", href: "/comparatifs/meilleur-recuperateur-eau-pluie/" }, { label: "Meilleur récupérateur d'eau de pluie" }]} />
   <Hero
     eyebrow="Comparatif"
-    title="Quel récupérateur d'eau de pluie choisir ?"
-    lead="Cette première grille compare des familles de cuves réalistes. Elle sert de base éditoriale avant l'ajout de fiches produits et de liens d'affiliation transparents."
+    title="Quel est le meilleur récupérateur d’eau de pluie pour votre jardin ?"
+    lead="Le meilleur récupérateur d’eau de pluie n’est pas forcément le plus gros ni le plus cher. Le bon choix dépend surtout de quatre éléments : la surface de toiture raccordée, la place disponible, le besoin réel d’arrosage et la simplicité d’installation."
   />
+
   <section class="section">
-    <div class="container">
-      <Callout title="Méthode">
-        <p>{affiliateConfig.transparencyNotice}</p>
+    <div class="container comparison-content">
+      <p>
+        Cette page compare les principales familles de récupérateurs d’eau de pluie
+        pour aider à choisir une solution cohérente : petit réservoir de terrasse,
+        cuve murale, récupérateur 500 L, cuve 1000 L, IBC ou cuve enterrée.
+      </p>
+      <p>
+        Les produits affichés dans cette première version sont une sélection
+        éditoriale structurée par usage. Ils ne sont pas présentés comme testés.
+        Les critères utilisés sont la capacité, l’installation, l’encombrement,
+        les accessoires, les limites et le rapport capacité/prix.
+      </p>
+
+      <Callout title="Transparence affiliation">
+        <p>
+          Certains liens pourront être affiliés. Si vous achetez via ces liens,
+          Jardin Sans Gaspillage pourra recevoir une commission, sans coût
+          supplémentaire pour vous. La sélection ne repose pas sur la commission
+          la plus élevée, mais sur l’adéquation entre le produit, l’usage et les
+          contraintes d’installation.
+        </p>
       </Callout>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container comparison-content">
+      <h2>Recommandations rapides</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Situation</th>
+              <th>Type recommandé</th>
+              <th>Capacité indicative</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Balcon ou terrasse</td>
+              <td>Récupérateur compact</td>
+              <td>100 à 300 L</td>
+            </tr>
+            <tr>
+              <td>Petit jardin</td>
+              <td>Cuve murale ou ronde</td>
+              <td>300 à 500 L</td>
+            </tr>
+            <tr>
+              <td>Potager familial</td>
+              <td>Récupérateur moyen à grand</td>
+              <td>500 à 1000 L</td>
+            </tr>
+            <tr>
+              <td>Grand jardin</td>
+              <td>Cuve 1000 L ou IBC</td>
+              <td>1000 L et plus</td>
+            </tr>
+            <tr>
+              <td>Projet discret et durable</td>
+              <td>Cuve enterrée</td>
+              <td>1500 L et plus</td>
+            </tr>
+            <tr>
+              <td>Budget serré</td>
+              <td>Cuve simple ou IBC</td>
+              <td>Selon place disponible</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Avant d’acheter, utilisez le
+        <a href="/outils/calculateur-taille-cuve/">calculateur de taille de cuve</a>
+        pour obtenir un premier ordre de grandeur.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container comparison-content">
+      <h2>Comparatif des meilleurs types de récupérateurs d’eau de pluie</h2>
+      <p>
+        Le tableau ci-dessous ne cherche pas à désigner un seul vainqueur. Il
+        classe les solutions selon leur usage réel : petit espace, bon compromis,
+        grande capacité, intégration esthétique ou rapport volume/prix.
+      </p>
       <ComparisonTable products={products} />
     </div>
   </section>
+
   <section class="section">
     <div class="container grid three">
-      {products.slice(0, 3).map((product) => (
+      {products.map((product) => (
         <ProductCard product={product} />
       ))}
     </div>
   </section>
+
   <section class="section">
-    <div class="container">
-      <a href="/methode-comparaison/">Lire la méthode de comparaison</a>
+    <div class="container comparison-content">
+      <h2>Quel type de récupérateur choisir ?</h2>
+
+      <h3>Récupérateur compact 200 à 350 L</h3>
+      <p>
+        Un récupérateur compact convient surtout aux petits jardins, terrasses ou
+        usages ponctuels. Il permet de remplir un arrosoir, d’arroser quelques
+        plantes en pot ou de garder une petite réserve près d’une descente de
+        gouttière.
+      </p>
+      <p>
+        Son avantage principal est la simplicité : peu d’encombrement, prix plus
+        accessible, installation généralement rapide. Sa limite est évidente : en
+        période sèche, la réserve peut se vider très vite, surtout si l’arrosage
+        n’est pas limité aux zones utiles.
+      </p>
+
+      <h3>Récupérateur mural 300 L</h3>
+      <p>
+        Le récupérateur mural est intéressant quand l’espace au sol est réduit.
+        Il se place contre une façade, dans un passage latéral ou près d’une
+        terrasse. C’est souvent un meilleur choix visuel qu’une cuve ronde
+        lorsqu’elle reste visible toute l’année.
+      </p>
+      <p>
+        Il reste toutefois adapté à un usage modéré. Pour un vrai potager
+        familial, 300 L peuvent aider, mais ne suffisent pas à assurer une
+        autonomie longue.
+      </p>
+
+      <h3>Récupérateur 500 L</h3>
+      <p>
+        Le format 500 L est souvent le meilleur compromis pour un particulier.
+        Il reste relativement simple à installer tout en offrant une réserve plus
+        sérieuse qu’un modèle compact.
+      </p>
+      <p>
+        C’est un bon choix pour des massifs, quelques jeunes arbres, un petit
+        potager ou un jardin familial raisonnable. Pour en tirer le meilleur, il
+        faut l’associer à un arrosage sobre : paillage, arrosoir ciblé,
+        goutte-à-goutte ou oyas.
+      </p>
+
+      <h3>Cuve 1000 L</h3>
+      <p>
+        Une cuve 1000 L devient pertinente dès que le jardin est plus régulier à
+        arroser. Elle permet de stocker davantage après les pluies et d’éviter de
+        vider la réserve au bout de quelques arrosages.
+      </p>
+      <p>
+        En contrepartie, elle demande de la place, un sol stable et une
+        installation réfléchie. Une cuve pleine est très lourde : le support, le
+        trop-plein et la sécurité ne doivent pas être improvisés.
+      </p>
+
+      <h3>Cuve IBC 1000 L</h3>
+      <p>
+        La cuve IBC est souvent le meilleur rapport volume/prix. Elle convient
+        très bien à une zone technique, un grand potager ou un jardin productif où
+        l’esthétique est secondaire.
+      </p>
+      <p>
+        Avant achat, il faut vérifier l’origine de la cuve, son état, sa propreté,
+        la compatibilité des raccords et sa protection contre la lumière. Une IBC
+        exposée au soleil peut favoriser le développement d’algues si elle n’est
+        pas protégée.
+      </p>
+
+      <h3>Cuve enterrée</h3>
+      <p>
+        La cuve enterrée répond à une logique différente. Elle convient aux
+        projets durables, aux grandes toitures et aux besoins importants. Elle est
+        discrète, mieux protégée de la lumière et peut stocker des volumes plus
+        élevés.
+      </p>
+      <p>
+        Mais c’est aussi la solution la plus engageante : terrassement, budget,
+        accessoires, pompe éventuelle et installation technique. Elle mérite
+        souvent un devis ou un accompagnement professionnel.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container comparison-content">
+      <h2>Comment choisir la bonne capacité ?</h2>
+      <p>
+        La capacité ne doit pas être choisie uniquement parce qu’un modèle est en
+        promotion. Une cuve trop petite sera vite frustrante. Une cuve trop grande,
+        mal placée ou mal raccordée, peut devenir inutile.
+      </p>
+
+      <h3>Surface de toiture</h3>
+      <p>
+        Plus la surface reliée à la gouttière est grande, plus le potentiel de
+        récupération augmente. Une petite toiture peut remplir rapidement une cuve
+        de 300 L lors d’un orage, mais elle ne permettra pas forcément de soutenir
+        un grand potager pendant plusieurs semaines sèches.
+      </p>
+
+      <h3>Pluviométrie locale</h3>
+      <p>
+        La même cuve ne rend pas le même service dans une région très arrosée et
+        dans une région méditerranéenne. Là où les pluies sont espacées, il faut
+        davantage penser stockage, sol couvert et arrosage lent.
+      </p>
+
+      <h3>Besoin réel du jardin</h3>
+      <p>
+        Quelques pots, un massif sec, un potager de 20 m² ou une grande pelouse
+        n’ont pas les mêmes besoins. Pour Jardin Sans Gaspillage, la priorité
+        n’est pas d’arroser plus, mais d’arroser mieux : au pied des plantes,
+        moins souvent, avec un sol protégé.
+      </p>
+
+      <h3>Place disponible</h3>
+      <p>
+        La meilleure cuve sur le papier n’est pas forcément la meilleure chez vous.
+        Une 1000 L mal placée, difficile d’accès ou trop visible peut être moins
+        utile qu’une 500 L bien raccordée et simple à utiliser.
+      </p>
+
+      <h3>Fréquence des pluies</h3>
+      <p>
+        Si les pluies sont régulières, une cuve moyenne peut suffire. Si les
+        épisodes sont rares mais intenses, une plus grande capacité devient
+        intéressante pour stocker quand l’eau tombe vraiment.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container comparison-content">
+      <h2>300 L, 500 L ou 1000 L : que choisir ?</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Capacité</th>
+              <th>Pour qui</th>
+              <th>Limites</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>300 L</td>
+              <td>Terrasse, petit jardin, arrosage ponctuel</td>
+              <td>Autonomie faible</td>
+            </tr>
+            <tr>
+              <td>500 L</td>
+              <td>Jardin familial, petits massifs, potager modéré</td>
+              <td>Encore juste en sécheresse</td>
+            </tr>
+            <tr>
+              <td>1000 L</td>
+              <td>Potager, jardin moyen, usage régulier</td>
+              <td>Encombrement et poids</td>
+            </tr>
+            <tr>
+              <td>Plus de 1000 L</td>
+              <td>Grand jardin, autonomie longue, projet durable</td>
+              <td>Coût et installation plus lourds</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Pour affiner ce choix, passez par le
+        <a href="/outils/calculateur-taille-cuve/">calculateur de taille de cuve</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container comparison-content">
+      <h2>Les critères à vérifier avant achat</h2>
+      <ul class="criteria-list">
+        <li>Capacité réelle</li>
+        <li>Dimensions</li>
+        <li>Robinet inclus ou non</li>
+        <li>Collecteur de gouttière inclus ou non</li>
+        <li>Filtre à feuilles</li>
+        <li>Trop-plein</li>
+        <li>Couvercle fermé</li>
+        <li>Protection UV</li>
+        <li>Vidange hivernale</li>
+        <li>Stabilité du support</li>
+        <li>Compatibilité tuyau ou pompe</li>
+        <li>Accès pour nettoyage</li>
+      </ul>
+      <p>
+        Le prix affiché peut être trompeur si le collecteur, le robinet, le socle
+        ou les raccords doivent être achetés séparément. Pour comparer
+        correctement, regardez le coût complet d’installation, pas seulement le
+        prix de la cuve.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container comparison-content">
+      <h2>Erreurs fréquentes à éviter</h2>
+
+      <h3>Poser la cuve sur un sol instable</h3>
+      <p>
+        Une cuve remplie représente plusieurs centaines de kilos. Elle doit être
+        posée sur un support plat, stable et adapté.
+      </p>
+
+      <h3>Oublier le trop-plein</h3>
+      <p>
+        Quand la cuve est pleine, l’eau doit pouvoir s’évacuer proprement. Un
+        trop-plein mal prévu peut provoquer des débordements près de la maison.
+      </p>
+
+      <h3>Négliger les feuilles et débris</h3>
+      <p>
+        Un collecteur filtrant limite l’encrassement. Sans filtre, les feuilles,
+        mousses et petites impuretés peuvent accélérer les mauvaises odeurs ou
+        boucher le robinet.
+      </p>
+
+      <h3>Laisser la cuve ouverte</h3>
+      <p>
+        Un couvercle fermé limite les débris, la lumière et les moustiques. C’est
+        un point simple mais essentiel.
+      </p>
+
+      <h3>Installer la cuve trop loin du jardin</h3>
+      <p>
+        Plus la cuve est éloignée de la zone à arroser, moins elle sera utilisée.
+        Le bon emplacement doit concilier gouttière, accès, stabilité et proximité
+        du besoin.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container comparison-content">
+      <h2>Peut-on utiliser l’eau de pluie pour arroser le potager ?</h2>
+      <p>
+        Pour un usage extérieur au jardin, l’eau de pluie récupérée peut être
+        utilisée pour arroser les espaces verts et le potager. En revanche, elle
+        ne doit pas être considérée comme potable. Elle ne doit pas être utilisée
+        pour boire, cuisiner, laver la vaisselle ou l’hygiène corporelle.
+      </p>
+      <p>
+        Pour rester prudent, utilisez-la pour le sol et le pied des plantes,
+        évitez d’arroser directement les parties consommées juste avant récolte,
+        et gardez une cuve propre, fermée et filtrée.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container comparison-content">
+      <h2>Faut-il une pompe ?</h2>
+      <p>
+        Une pompe n’est pas indispensable si vous remplissez un arrosoir au robinet
+        de la cuve. Elle devient utile si la cuve est éloignée, si vous utilisez
+        un tuyau long, si vous voulez alimenter un système goutte-à-goutte ou si
+        la pression gravitaire est insuffisante.
+      </p>
+      <p>
+        Dans beaucoup de petits jardins, une installation simple par gravité reste
+        préférable : moins chère, moins fragile et plus sobre. Pour les grandes
+        cuves, une pompe de surface ou une pompe solaire peut devenir intéressante.
+      </p>
+      <p>
+        Pour aller plus loin, consultez aussi le guide sur
+        <a href="/arrosage-econome/">l’arrosage économe</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container comparison-content">
+      <h2>Notre méthode de comparaison</h2>
+      <p>
+        Cette sélection repose sur des critères pratiques et publics : capacité,
+        usage recommandé, encombrement, facilité d’installation, accessoires,
+        limites, prix indicatif et cohérence avec un jardin sobre en eau.
+      </p>
+      <p>
+        Les produits ne sont pas présentés comme testés si aucun test réel n’a
+        été mené. Les liens d’affiliation, lorsqu’ils seront activés, ne doivent
+        pas modifier l’ordre éditorial sans raison valable. L’objectif est de
+        recommander une solution adaptée, pas simplement le produit le plus cher.
+      </p>
+      <p>
+        Lire la <a href="/methode-comparaison/">méthode de comparaison</a> et la
+        page <a href="/affiliation/">transparence affiliation</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container comparison-content">
+      <h2>Verdict</h2>
+      <p>
+        Pour un petit jardin ou une terrasse, un récupérateur compact de 200 à
+        300 L suffit souvent pour démarrer. Pour un jardin familial, le format
+        500 L offre le meilleur équilibre. Pour un potager plus sérieux ou un
+        usage régulier, une cuve de 1000 L devient plus cohérente. Pour maximiser
+        le volume au meilleur prix, l’IBC reste difficile à battre, à condition
+        d’accepter son aspect technique.
+      </p>
+      <p>
+        Le bon choix n’est pas seulement une question de litres. Il dépend aussi
+        de l’endroit où tombe l’eau, de l’endroit où elle sera utilisée, et de la
+        façon dont le jardin limite naturellement ses besoins.
+      </p>
+      <p>
+        Pour compléter votre lecture, consultez le guide sur la
+        <a href="/recuperation-eau/">récupération d’eau</a> et les conseils pour
+        concevoir un <a href="/jardin-sec/">jardin sec</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container comparison-content">
+      <h2>FAQ</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Quel est le meilleur récupérateur d’eau de pluie ?</summary>
+          <p>
+            Le meilleur récupérateur dépend de l’usage. Pour une terrasse, un
+            modèle compact suffit. Pour un jardin familial, 500 L est souvent un
+            bon compromis. Pour un potager régulier, 1000 L ou plus devient plus
+            cohérent.
+          </p>
+        </details>
+        <details>
+          <summary>Est-ce qu’un récupérateur de 300 L suffit ?</summary>
+          <p>
+            Oui pour quelques plantes, une terrasse ou un petit jardin. Pour un
+            potager familial, 300 L sont généralement une réserve d’appoint, pas
+            une vraie autonomie.
+          </p>
+        </details>
+        <details>
+          <summary>Quelle capacité choisir pour un potager ?</summary>
+          <p>
+            Pour un petit potager, 500 L peuvent déjà aider. Pour un potager plus
+            régulier, 1000 L ou plus offrent une marge plus confortable, surtout
+            si la toiture permet de récupérer assez d’eau.
+          </p>
+        </details>
+        <details>
+          <summary>Faut-il vider un récupérateur d’eau en hiver ?</summary>
+          <p>
+            Dans les régions exposées au gel, il est prudent de vidanger ou de
+            protéger la cuve pour éviter les déformations, fissures et dégâts sur
+            le robinet ou les raccords.
+          </p>
+        </details>
+        <details>
+          <summary>Comment éviter les moustiques ?</summary>
+          <p>
+            Choisissez une cuve fermée, évitez l’eau stagnante à l’air libre,
+            utilisez un collecteur adapté et vérifiez que les ouvertures sont
+            protégées.
+          </p>
+        </details>
+        <details>
+          <summary>Faut-il une pompe avec une cuve ?</summary>
+          <p>
+            Non pour remplir un arrosoir. Oui éventuellement pour alimenter un
+            tuyau long, un goutte-à-goutte ou une zone située plus loin que la
+            cuve.
+          </p>
+        </details>
+        <details>
+          <summary>Une cuve IBC est-elle une bonne idée ?</summary>
+          <p>
+            Oui si l’objectif principal est le volume au meilleur prix. Elle est
+            moins esthétique, mais très intéressante pour une zone technique ou un
+            potager.
+          </p>
+        </details>
+        <details>
+          <summary>Peut-on arroser les légumes avec de l’eau de pluie ?</summary>
+          <p>
+            Oui pour un usage d’arrosage au jardin, en restant prudent : eau non
+            potable, cuve propre, arrosage de préférence au pied des plantes, et
+            pas d’usage alimentaire ou sanitaire.
+          </p>
+        </details>
+      </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .comparison-content {
+    max-width: 900px;
+  }
+
+  .comparison-content > p,
+  .comparison-content li {
+    color: var(--muted);
+  }
+
+  .comparison-content h2:not(:first-child),
+  .comparison-content h3 {
+    margin-top: 1.6rem;
+  }
+
+  .criteria-list {
+    columns: 2;
+    gap: 2rem;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .faq-list details {
+    background: var(--paper-light);
+    border: 1px solid var(--border);
+    padding: 1rem;
+  }
+
+  .faq-list summary {
+    color: var(--ink);
+    cursor: pointer;
+    font-weight: 800;
+  }
+
+  .faq-list p {
+    color: var(--muted);
+    margin: 0.75rem 0 0;
+  }
+
+  @media (max-width: 780px) {
+    .criteria-list {
+      columns: 1;
+    }
+  }
+</style>
