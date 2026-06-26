@@ -1,0 +1,11 @@
+{
+  "amazon": {
+    "enabled": true,
+    "storeId": "nicoju-21"
+  },
+  "awin": {
+    "enabled": false,
+    "publisherId": ""
+  },
+  "transparencyNotice": "Certains liens pourront être affiliés. Les produits ne sont pas présentés comme testés. La sélection repose sur des critères publics : capacité, usage, installation, limites, prix indicatif et cohérence avec le besoin."
+}

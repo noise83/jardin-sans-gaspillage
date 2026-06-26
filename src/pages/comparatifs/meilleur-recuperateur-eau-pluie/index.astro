@@ -5,7 +5,8 @@ import Hero from "../../../components/Hero.astro";
 import Callout from "../../../components/Callout.astro";
 import ComparisonTable from "../../../components/ComparisonTable.astro";
 import ProductCard from "../../../components/ProductCard.astro";
-import products from "../../../data/recuperateurs-eau.json";
+import affiliateConfig from "../../../data/affiliate-config.json";
+import products from "../../../data/products/recuperateurs-eau.json";
 ---
 
 <BaseLayout
@@ -21,7 +22,7 @@ import products from "../../../data/recuperateurs-eau.json";
   <section class="section">
     <div class="container">
       <Callout title="Méthode">
-        <p>Les produits ci-dessous sont des placeholders réalistes. Ils ne sont pas présentés comme testés. Les critères utilisés sont la capacité, l'installation, la robustesse perçue, l'usage, le prix indicatif, la disponibilité et les limites.</p>
+        <p>{affiliateConfig.transparencyNotice}</p>
       </Callout>
       <ComparisonTable products={products} />
     </div>
@@ -29,12 +30,7 @@ import products from "../../../data/recuperateurs-eau.json";
   <section class="section">
     <div class="container grid three">
       {products.slice(0, 3).map((product) => (
-        <ProductCard
-          name={product.nom}
-          capacity={product.capacite}
-          use={product.usage}
-          limit={product.limites}
-        />
+        <ProductCard product={product} />
       ))}
     </div>
   </section>

@@ -1,0 +1,40 @@
+---
+interface Props {
+  href: string;
+  label?: string;
+}
+
+const { href, label = "Voir l'offre" } = Astro.props;
+const isDisabled = !href || href === "#";
+---
+
+{isDisabled ? (
+  <span class="affiliate-button affiliate-button--disabled" aria-disabled="true">Lien à venir</span>
+) : (
+  <a class="affiliate-button" href={href} rel="nofollow sponsored">{label}</a>
+)}
+
+<style>
+  .affiliate-button {
+    align-items: center;
+    background: var(--ink);
+    border: 1px solid var(--ink);
+    color: var(--paper-light);
+    display: inline-flex;
+    font-weight: 700;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0.58rem 0.9rem;
+    text-decoration: none;
+  }
+
+  .affiliate-button:hover {
+    color: var(--paper-light);
+  }
+
+  .affiliate-button--disabled {
+    background: transparent;
+    color: var(--muted);
+    cursor: not-allowed;
+  }
+</style>

@@ -1,17 +1,37 @@
 ---
-interface Props {
+import AffiliateButton from "./AffiliateButton.astro";
+import affiliateConfig from "../data/affiliate-config.json";
+import { getBestAffiliateUrl } from "../utils/affiliate";
+
+interface Product {
   name: string;
+  category: string;
   capacity: string;
-  use: string;
-  limit: string;
+  bestFor: string;
+  positioning: string;
+  priceRange: string;
+  asin?: string;
+  pros: string[];
+  cons: string[];
+  links?: {
+    fallback?: string;
+  };
 }
 
-const { name, capacity, use, limit } = Astro.props;
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const affiliateUrl = getBestAffiliateUrl(product, affiliateConfig);
 ---
 
 <article class="product-card">
-  <p class="product-card__meta">{capacity}</p>
-  <h3>{name}</h3>
-  <p>{use}</p>
-  <p><strong>À vérifier :</strong> {limit}</p>
+  <p class="product-card__meta">{product.category} · {product.capacity}</p>
+  <h3>{product.name}</h3>
+  <p>{product.positioning}</p>
+  <p><strong>Pour :</strong> {product.bestFor}</p>
+  <p><strong>À vérifier :</strong> {product.cons.join(", ")}</p>
+  <p><strong>Prix indicatif :</strong> {product.priceRange}</p>
+  <AffiliateButton href={affiliateUrl} />
 </article>

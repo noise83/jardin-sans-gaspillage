@@ -1,11 +1,21 @@
 ---
+import AffiliateButton from "./AffiliateButton.astro";
+import affiliateConfig from "../data/affiliate-config.json";
+import { getBestAffiliateUrl } from "../utils/affiliate";
+
 interface Product {
-  nom: string;
-  capacite: string;
-  usage: string;
-  pointsForts: string;
-  limites: string;
-  prixIndicatif: string;
+  name: string;
+  category: string;
+  capacity: string;
+  bestFor: string;
+  positioning: string;
+  priceRange: string;
+  asin?: string;
+  pros: string[];
+  cons: string[];
+  links?: {
+    fallback?: string;
+  };
 }
 
 interface Props {
@@ -25,17 +35,19 @@ const { products } = Astro.props;
         <th>Points forts</th>
         <th>Limites</th>
         <th>Prix indicatif</th>
+        <th>Offre</th>
       </tr>
     </thead>
     <tbody>
       {products.map((product) => (
         <tr>
-          <td><strong>{product.nom}</strong></td>
-          <td>{product.capacite}</td>
-          <td>{product.usage}</td>
-          <td>{product.pointsForts}</td>
-          <td>{product.limites}</td>
-          <td>{product.prixIndicatif}</td>
+          <td><strong>{product.name}</strong><br />{product.category}</td>
+          <td>{product.capacity}</td>
+          <td>{product.bestFor}</td>
+          <td>{product.pros.join(", ")}</td>
+          <td>{product.cons.join(", ")}</td>
+          <td>{product.priceRange}</td>
+          <td><AffiliateButton href={getBestAffiliateUrl(product, affiliateConfig)} /></td>
         </tr>
       ))}
     </tbody>

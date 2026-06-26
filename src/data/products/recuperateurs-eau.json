@@ -1,0 +1,134 @@
+[
+  {
+    "id": "cuve-simple-300l",
+    "name": "Cuve simple petit budget 300 L",
+    "category": "Cuve aérienne",
+    "capacity": "200 à 350 L",
+    "bestFor": "Petit jardin, terrasse ou arrosage ponctuel près de la maison",
+    "positioning": "Le choix accessible pour démarrer sans gros volume ni installation lourde.",
+    "priceRange": "60 à 140 €",
+    "asin": "",
+    "pros": [
+      "Budget contenu",
+      "Installation généralement simple",
+      "Format adapté aux petits espaces"
+    ],
+    "cons": [
+      "Réserve limitée en été",
+      "Accessoires variables selon les modèles"
+    ],
+    "links": {
+      "fallback": "#"
+    }
+  },
+  {
+    "id": "recuperateur-mural-300l",
+    "name": "Récupérateur mural 300 L",
+    "category": "Récupérateur mural",
+    "capacity": "300 L",
+    "bestFor": "Façade étroite, passage latéral ou jardin urbain",
+    "positioning": "Une solution discrète quand l'encombrement au sol compte autant que la capacité.",
+    "priceRange": "90 à 220 €",
+    "asin": "",
+    "pros": [
+      "Profondeur réduite",
+      "Intégration plus facile contre un mur",
+      "Volume suffisant pour des usages ponctuels"
+    ],
+    "cons": [
+      "Stabilité et support à vérifier",
+      "Moins polyvalent qu'une cuve ronde classique"
+    ],
+    "links": {
+      "fallback": "#"
+    }
+  },
+  {
+    "id": "recuperateur-500l-compromis",
+    "name": "Récupérateur 500 L bon compromis",
+    "category": "Cuve aérienne",
+    "capacity": "500 L",
+    "bestFor": "Potager familial modéré et massifs proches de la descente de gouttière",
+    "positioning": "Le format équilibré entre prix, réserve utile et facilité de pose.",
+    "priceRange": "120 à 280 €",
+    "asin": "",
+    "pros": [
+      "Capacité plus confortable",
+      "Bon rapport encombrement/réserve",
+      "Large choix de formes"
+    ],
+    "cons": [
+      "Encore juste pour une longue période sèche",
+      "Socle stable indispensable une fois remplie"
+    ],
+    "links": {
+      "fallback": "#"
+    }
+  },
+  {
+    "id": "slim-stone-500l",
+    "name": "Récupérateur design 500 L type Slim Stone",
+    "category": "Cuve décorative",
+    "capacity": "500 L",
+    "bestFor": "Terrasse visible, façade soignée ou jardin où l'apparence compte",
+    "positioning": "Une option plus esthétique pour garder une réserve correcte sans aspect trop technique.",
+    "priceRange": "220 à 450 €",
+    "asin": "",
+    "pros": [
+      "Aspect plus travaillé",
+      "Format souvent vertical et peu profond",
+      "S'intègre mieux dans une zone visible"
+    ],
+    "cons": [
+      "Prix plus élevé à volume équivalent",
+      "Raccords et robinet à contrôler avant achat"
+    ],
+    "links": {
+      "fallback": "#"
+    }
+  },
+  {
+    "id": "cuve-1000l-grande-capacite",
+    "name": "Cuve grande capacité 1000 L",
+    "category": "Cuve grande capacité",
+    "capacity": "1000 L",
+    "bestFor": "Jardin moyen, arrosage régulier et réserve de sécurité",
+    "positioning": "Une réserve sérieuse pour réduire le recours à l'eau potable sur une saison normale.",
+    "priceRange": "250 à 600 €",
+    "asin": "",
+    "pros": [
+      "Volume confortable",
+      "Compatible avec plusieurs usages",
+      "Intéressante avec une pompe de surface adaptée"
+    ],
+    "cons": [
+      "Emprise au sol importante",
+      "Support et sécurité à prendre au sérieux"
+    ],
+    "links": {
+      "fallback": "#"
+    }
+  },
+  {
+    "id": "cuve-ibc-1000l",
+    "name": "Cuve IBC 1000 L rapport volume/prix",
+    "category": "Cuve IBC",
+    "capacity": "1000 L",
+    "bestFor": "Usage pratique, zone technique, grand potager ou jardin productif",
+    "positioning": "Le meilleur volume par euro quand l'esthétique passe après l'efficacité.",
+    "priceRange": "80 à 250 €",
+    "asin": "",
+    "pros": [
+      "Excellent rapport volume/prix",
+      "Raccords standards fréquents",
+      "Facile à trouver en neuf ou reconditionné"
+    ],
+    "cons": [
+      "Aspect très technique",
+      "Origine alimentaire et état à vérifier en reconditionné"
+    ],
+    "links": {
+      "fallback": "#"
+    }
+  }
+]
