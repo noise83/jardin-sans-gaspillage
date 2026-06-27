@@ -66,19 +66,75 @@ Checklist de revue, validateur de brouillon et rapport de validation ajoutés. C
 
 ---
 
-# TASK 008 — WAITING_USER
+# TASK 008 — NEXT
+
+## Objectif
+Marquer le produit cible `recuperateur-500l-compromis` comme candidat prioritaire à rechercher, sans l’approuver et sans intégrer de produit public.
+
+## Pourquoi
+Le premier produit à chercher doit être un récupérateur d’eau de pluie 500 L classique, bon compromis, adapté à un jardin familial modéré. C’est le meilleur premier test commercial et éditorial. Mais aucune vraie URL produit n’a encore été validée, donc il ne faut pas mettre `approved`.
+
+## Fichiers concernés
+- `scripts/product-research/selected-products-input.json`
+- `scripts/product-research/README.md` si une précision courte est utile
+
+## Ne pas modifier
+- `AGENTS.md`
+- `package.json`
+- `astro.config.mjs`
+- les pages publiques
+- les composants
+- `src/data/products/recuperateurs-eau.json`
+- le moteur d’affiliation
+- les scripts `product-candidates`
+- le design global
+- `CODEX_QUEUE.md`
+
+## À faire
+
+1. Dans `selected-products-input.json`, nettoyer l’entrée `recuperateur-500l-compromis` :
+- garder `targetProductId: "recuperateur-500l-compromis"` ;
+- mettre `sourceUrl` à vide ;
+- mettre `status` à `candidate`, pas `approved` ;
+- ajouter une note claire indiquant que c’est le candidat prioritaire ;
+- préciser dans la note le type de produit recherché : récupérateur eau de pluie environ 500 L, cuve fermée, robinet inclus ou compatible, trop-plein possible, dimensions indiquées, protection UV ou matière opaque, produit neuf, pas IBC, pas occasion.
+
+2. S’assurer qu’aucune entrée placeholder ne reste en `approved` sans URL exploitable.
+
+3. Ne pas ajouter de vraie URL produit.
+
+4. Ne pas modifier les produits publics.
+
+5. Lancer :
+- `node scripts/product-research/parse-selected-products.mjs`
+- `node scripts/product-research/apply-selected-products.mjs`
+- `node scripts/product-research/validate-product-draft.mjs`
+- `npm run build`
+
+## Validation
+- Les scripts passent.
+- Le build passe.
+- Aucun produit public n’est modifié.
+- Le rapport de validation ne signale pas de modification publique.
+- Résumer les fichiers modifiés.
+- Commit et push avec le message :
+  `Mark 500l collector as priority product candidate`
+
+---
+
+# TASK 009 — WAITING_USER
 
 ## Objectif
 Intégrer manuellement un premier produit réel validé dans les données publiques.
 
 ## Pourquoi cette tâche attend
-Cette tâche ne doit pas être exécutée tant qu’au moins un produit réel n’a pas été sélectionné et validé éditorialement.
+Cette tâche ne doit pas être exécutée tant qu’une vraie URL produit Amazon n’a pas été sélectionnée et validée éditorialement.
 
 ## Action attendue avant de repasser en NEXT
-- Sélectionner un produit réel cohérent avec une entrée de `src/data/products/recuperateurs-eau.json`.
-- Renseigner l’URL source dans `scripts/product-research/selected-products-input.json`.
+- Sélectionner un produit réel cohérent avec `recuperateur-500l-compromis`.
+- Renseigner son URL source dans `scripts/product-research/selected-products-input.json`.
 - Mettre `status: "approved"` seulement après vérification éditoriale.
 - Lancer les scripts de contrôle avant toute intégration publique.
 
 ## Note importante
-Ne pas marquer cette tâche `NEXT` avant validation humaine d’au moins un produit réel.
+Ne pas marquer cette tâche `NEXT` avant validation humaine d’un produit réel.
