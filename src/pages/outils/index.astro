@@ -1,0 +1,99 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import Hero from "../../components/Hero.astro";
+import Callout from "../../components/Callout.astro";
+---
+
+<BaseLayout
+  title="Outils jardin économe en eau : calculateur de cuve et aides pratiques"
+  description="Retrouvez les outils Jardin Sans Gaspillage pour estimer une taille de cuve, mieux arroser, préparer une installation et choisir une solution adaptée."
+>
+  <Breadcrumb items={[{ label: "Outils" }]} />
+  <Hero
+    eyebrow="Outils"
+    title="Outils pour récupérer l’eau et arroser moins"
+    lead="Les outils Jardin Sans Gaspillage aident à passer d’une idée générale à un choix concret : volume de cuve, usage réel du jardin, arrosage, installation et place disponible."
+  />
+
+  <section class="section">
+    <div class="container legal">
+      <p>
+        Un outil ne remplace pas l’observation du terrain. Il sert à poser un
+        premier cadre, éviter les achats mal dimensionnés et mieux comprendre les
+        ordres de grandeur avant de choisir une solution.
+      </p>
+      <p>
+        Les résultats doivent toujours être relus avec le contexte du jardin :
+        toiture raccordée, pluies locales, sol, plantes, distance jusqu’aux zones
+        à arroser et simplicité d’usage au quotidien.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container legal">
+      <h2>Outil disponible</h2>
+      <article class="panel">
+        <p class="panel__kicker">Dimensionnement</p>
+        <h3>Calculateur de taille de cuve</h3>
+        <p>
+          Estimer un volume de récupération à partir de la surface de toiture, de
+          la pluviométrie et du besoin d’arrosage.
+        </p>
+        <a href="/outils/calculateur-taille-cuve/">Utiliser le calculateur</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container legal">
+      <h2>Outils à venir</h2>
+      <p>
+        Ces outils seront publiés progressivement, avec la même logique : aider à
+        décider sans promettre une précision scientifique parfaite.
+      </p>
+      <ul>
+        <li>Simulateur d’économie d’eau au jardin</li>
+        <li>Aide au choix entre oyas, goutte-à-goutte et arrosoir</li>
+        <li>Checklist installation récupérateur d’eau</li>
+        <li>Estimation besoin d’arrosage du potager</li>
+        <li>Comparateur capacité de cuve 300 L, 500 L, 1000 L</li>
+        <li>Guide de diagnostic jardin sec</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container legal">
+      <Callout title="Comment utiliser ces outils">
+        <p>
+          Les résultats donnent un ordre de grandeur. Ils ne remplacent pas
+          l’observation du terrain, ni les contraintes réelles de pose et d’usage.
+        </p>
+        <p>
+          Tenez compte de la toiture, du climat, du sol, des plantes et de la place
+          disponible. Le but est d’éviter une cuve trop petite, un système trop
+          compliqué ou un achat mal adapté au besoin.
+        </p>
+      </Callout>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container legal">
+      <h2>Préparer le bon choix</h2>
+      <p>
+        Les outils sont plus utiles quand ils s’appuient sur une méthode simple :
+        comprendre l’eau disponible, réduire les besoins et choisir un jardin plus
+        résilient.
+      </p>
+      <div class="link-row">
+        <a href="/recuperation-eau/">Récupération d’eau</a>
+        <a href="/arrosage-econome/">Arrosage économe</a>
+        <a href="/jardin-sec/">Jardin sec</a>
+        <a href="/comparatifs/">Comparatifs</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
