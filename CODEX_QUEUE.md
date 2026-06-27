@@ -36,44 +36,19 @@ Créer une page longue traîne SEO sur les récupérateurs d’eau de pluie 300 
 
 ---
 
-# TASK 002 — NEXT
+# TASK 002 — DONE
 
 ## Objectif
 Renforcer le maillage interne entre les pages 300 L, 500 L, 1000 L, la page pilier récupération d’eau et le comparatif principal.
 
-## Fichiers concernés
-- `src/pages/recuperation-eau/index.astro`
-- `src/pages/recuperation-eau/recuperateur-eau-pluie-300l/index.astro`
-- `src/pages/recuperation-eau/recuperateur-eau-pluie-500l/index.astro`
-- `src/pages/recuperation-eau/cuve-eau-pluie-1000l/index.astro`
-- `src/pages/comparatifs/meilleur-recuperateur-eau-pluie/index.astro`
-
-## À faire
-- Ajouter depuis la page pilier `/recuperation-eau/` un bloc ou une section courte vers les guides 300 L, 500 L et 1000 L.
-- Ajouter sur chaque page capacité des liens naturels vers les deux autres capacités.
-- Ajouter depuis le comparatif principal un lien vers les guides 300 L, 500 L et 1000 L.
-- Éviter les ancres répétées et sur-optimisées.
-- Garder des textes courts, naturels et utiles.
-
-## Contraintes
-- Ne pas modifier le design global.
-- Ne pas ajouter d’affiliation.
-- Ne pas créer de nouvelles pages.
-- Ne pas ajouter de dépendance.
-- Ne pas modifier `AGENTS.md`.
-- Ne pas modifier les pages légales.
-- Ne pas toucher au moteur d’affiliation.
-- Ne pas toucher aux scripts `product-candidates`.
-
-## Validation
-- `npm run build` doit passer.
-- Résumer les fichiers modifiés.
-- Commit et push avec le message :
-  `Improve internal links between rainwater capacity guides`
+## Résultat
+- Maillage interne renforcé entre les pages capacité, le pilier et le comparatif.
+- Commit : `32e417c Improve internal links between rainwater capacity guides`
+- Build validé par Codex.
 
 ---
 
-# TASK 003 — TODO
+# TASK 003 — NEXT
 
 ## Objectif
 Ajouter des données structurées simples aux pages longues traîne 300 L, 500 L et 1000 L.
@@ -88,11 +63,16 @@ Ajouter des données structurées simples aux pages longues traîne 300 L, 500 L
 - Ajouter `Article`.
 - Ne pas ajouter `Product`, `Review` ou `AggregateRating`.
 - Ne pas inventer d’auteur personnel ; utiliser `Jardin Sans Gaspillage`.
+- Les URL doivent utiliser `https://jardinsansgaspillage.fr`.
+- Les titres et descriptions du JSON-LD doivent correspondre aux pages concernées.
 
 ## Contraintes
 - Le JSON-LD doit correspondre au contenu visible.
 - Ne pas ajouter de dépendance.
 - Ne pas modifier le contenu visible sauf nécessité technique.
+- Ne pas modifier `AGENTS.md`.
+- Ne pas toucher au moteur d’affiliation.
+- Ne pas ajouter de schema `Product` tant que les produits ne sont pas réellement liés/offrés.
 
 ## Validation
 - `npm run build` doit passer.
