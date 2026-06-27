@@ -8,10 +8,10 @@
   },
   {
     "targetProductId": "recuperateur-500l-compromis",
-    "sourceUrl": "#",
-    "notes": "Placeholder approuve sans ASIN pour verifier que le script signale les entrees incompletes.",
+    "sourceUrl": "",
+    "notes": "Candidat prioritaire a rechercher : recuperateur eau de pluie environ 500 L, cuve fermee, robinet inclus ou compatible, trop-plein possible, dimensions indiquees, protection UV ou matiere opaque, produit neuf, pas IBC, pas occasion. Ne pas approuver sans URL produit verifiee editorialement.",
     "merchant": "Amazon",
-    "status": "approved"
+    "status": "candidate"
   },
   {
     "targetProductId": "cuve-1000l-grande-capacite",
