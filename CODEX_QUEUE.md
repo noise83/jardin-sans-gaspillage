@@ -90,108 +90,108 @@ Préparer un workflow local de recherche produits pour les récupérateurs d’e
 
 ---
 
-# TASK 006 — NEXT
+# TASK 006 — DONE
 
 ## Objectif
 Créer un import contrôlé depuis des produits sélectionnés vers un brouillon de données produits publiques, sans modifier automatiquement `src/data/products/recuperateurs-eau.json`.
 
-## Pourquoi
-On veut préparer l’étape d’intégration des ASIN, mais garder une validation humaine avant toute modification publique. Le script doit produire un brouillon contrôlable, pas pousser directement des produits réels dans le site.
+## Résultat
+- Fichier de travail `selected-products-input.json` ajouté.
+- Script `apply-selected-products.mjs` ajouté.
+- Brouillon généré dans `scripts/product-research/output/recuperateurs-eau-products-draft.json`.
+- Le fichier public `src/data/products/recuperateurs-eau.json` n’est pas modifié automatiquement.
+- Commit : `aafef30 Add controlled product import draft workflow`
+- Build validé par Codex.
 
-## Fichiers à modifier
-- `scripts/product-research/README.md`
+---
+
+# TASK 007 — NEXT
+
+## Objectif
+Créer une procédure de revue manuelle avant intégration des ASIN dans les données produits publiques, sans modifier les produits publics.
+
+## Pourquoi
+On a maintenant un workflow qui peut générer un brouillon. Avant de toucher `src/data/products/recuperateurs-eau.json`, il faut une étape de contrôle : vérifier que seules les valeurs attendues changent, que les ASIN sont plausibles, que les produits restent cohérents éditorialement, et que le site ne risque pas d’afficher des données commerciales inventées.
 
 ## Fichiers à créer
-- `scripts/product-research/selected-products-input.json`
-- `scripts/product-research/apply-selected-products.mjs`
-- `scripts/product-research/output/recuperateurs-eau-products-draft.json`
+- `scripts/product-research/PRODUCT_REVIEW_CHECKLIST.md`
+- `scripts/product-research/validate-product-draft.mjs`
+- `scripts/product-research/output/product-draft-validation-report.json`
+
+## Fichier à modifier
+- `scripts/product-research/README.md`
 
 ## Ne pas modifier
 - `AGENTS.md`
 - `package.json`
 - `astro.config.mjs`
-- les pages du site
+- les pages publiques
 - les composants
+- `src/data/products/recuperateurs-eau.json`
 - le moteur d’affiliation
 - les scripts `product-candidates`
 - le design global
 
-## Règle importante
-Ne pas modifier `src/data/products/recuperateurs-eau.json` dans cette tâche. Le script doit seulement générer un fichier brouillon dans `scripts/product-research/output/`.
-
 ## À faire
 
-### 1. Créer `selected-products-input.json`
-Créer un fichier de travail basé sur `selected-products-input.example.json`, mais destiné aux vraies sélections futures.
+### 1. Créer `PRODUCT_REVIEW_CHECKLIST.md`
+Rédiger une checklist claire pour la revue manuelle avant intégration publique.
+Elle doit couvrir :
+- vérifier que l’ASIN vient d’une URL Amazon copiée manuellement ;
+- vérifier que le produit correspond vraiment au `targetProductId` ;
+- vérifier capacité, dimensions, accessoires, trop-plein, collecteur, robinet, couvercle, protection UV ;
+- vérifier que le produit n’est pas présenté comme testé ;
+- vérifier qu’aucun prix, disponibilité, note ou avis n’est inventé ;
+- vérifier que les liens publics seront générés par le moteur d’affiliation, pas collés manuellement ;
+- vérifier que le brouillon ne modifie pas des champs éditoriaux sans raison ;
+- vérifier que le produit n’est pas dangereux, ambigu, hors sujet ou mal identifié ;
+- garder une trace des produits rejetés avec une raison.
 
-Chaque entrée doit contenir :
-- `targetProductId`
-- `sourceUrl`
-- `notes`
-- `merchant`
-- `status`
-
-Règles :
-- utiliser des entrées placeholder avec `sourceUrl` vide ou `#` ;
-- `status` doit pouvoir être `candidate`, `approved`, `rejected` ;
-- ne pas ajouter de vraie URL produit dans cette tâche ;
-- ne pas inventer de prix, d’avis ou de disponibilité.
-
-### 2. Créer `apply-selected-products.mjs`
+### 2. Créer `validate-product-draft.mjs`
 Créer un script Node sans dépendance qui :
 - lit `src/data/products/recuperateurs-eau.json` ;
-- lit `scripts/product-research/selected-products-input.json` ;
-- extrait les ASIN depuis `sourceUrl` avec les mêmes formats que `parse-selected-products.mjs` : `/dp/ASIN`, `/gp/product/ASIN`, `/product/ASIN` ;
-- ne prend en compte que les entrées avec `status: "approved"` ;
-- ignore les entrées `candidate` et `rejected` ;
-- cherche le produit cible via `targetProductId` ;
-- génère une copie des produits avec `asin` rempli uniquement quand un ASIN valide est trouvé ;
-- conserve les autres champs existants ;
-- écrit le résultat dans `scripts/product-research/output/recuperateurs-eau-products-draft.json` ;
-- affiche un résumé console : nombre d’entrées lues, approuvées, ASIN extraits, produits modifiés, erreurs.
+- lit `scripts/product-research/output/recuperateurs-eau-products-draft.json` ;
+- compare les produits par identifiant ;
+- vérifie que tous les produits publics existent encore dans le brouillon ;
+- vérifie qu’aucun nouveau champ commercial interdit n’est ajouté : `price`, `rating`, `reviews`, `availability`, `stock`, `discount` ;
+- vérifie que les ASIN ajoutés respectent un format plausible de 10 caractères alphanumériques ;
+- liste les produits dont l’ASIN a changé ;
+- signale les produits dont d’autres champs ont changé ;
+- écrit un rapport JSON dans `scripts/product-research/output/product-draft-validation-report.json` ;
+- affiche un résumé console clair.
 
-### 3. Sécurité du script
-Le script doit :
-- ne jamais modifier `src/data/products/recuperateurs-eau.json` ;
-- signaler les `targetProductId` inconnus ;
-- signaler les entrées approved sans ASIN ;
-- ne jamais ajouter de prix, disponibilité, note ou avis ;
-- ne jamais ajouter de tag affilié ;
-- ne jamais appeler Amazon, API externe ou réseau.
-
-### 4. Mettre à jour le README
-Ajouter une section expliquant le workflow :
-1. générer les liens de recherche ;
-2. chercher manuellement les produits ;
-3. copier les URLs dans `selected-products-input.json` ;
-4. mettre `status: "approved"` seulement après vérification éditoriale ;
-5. lancer `parse-selected-products.mjs` pour contrôle ;
-6. lancer `apply-selected-products.mjs` pour générer un brouillon ;
-7. relire le brouillon avant toute modification de `src/data/products/recuperateurs-eau.json`.
+### 3. Mettre à jour le README
+Ajouter une section “Revue avant intégration publique” qui explique :
+- générer le brouillon avec `apply-selected-products.mjs` ;
+- valider le brouillon avec `validate-product-draft.mjs` ;
+- lire `PRODUCT_REVIEW_CHECKLIST.md` ;
+- ne modifier `src/data/products/recuperateurs-eau.json` qu’après validation humaine ;
+- lancer `npm run build` après toute intégration publique.
 
 ## Contraintes
 - Ne pas ajouter de dépendance.
 - Ne pas scraper Amazon.
 - Ne pas appeler d’API externe.
-- Ne pas modifier les pages publiques.
 - Ne pas modifier les produits publics.
+- Ne pas modifier les pages publiques.
 - Ne pas activer d’affiliation directe.
-- Ne pas inventer de données commerciales.
+- Ne pas inventer de prix, disponibilité, note ou avis.
+- Ne pas créer de schema Product.
 
 ## Validation
-- `node scripts/product-research/parse-selected-products.mjs` doit fonctionner.
 - `node scripts/product-research/apply-selected-products.mjs` doit fonctionner.
+- `node scripts/product-research/validate-product-draft.mjs` doit fonctionner.
 - `npm run build` doit passer.
 - Résumer les fichiers créés/modifiés.
 - Commit et push avec le message :
-  `Add controlled product import draft workflow`
+  `Add product draft review workflow`
 
 ---
 
-# TASK 007 — TODO
+# TASK 008 — TODO
 
 ## Objectif
-Après validation du workflow d’import brouillon, créer une procédure de revue manuelle pour intégrer les ASIN dans les données publiques sans casser le site.
+Après validation de la procédure de revue, intégrer manuellement un premier produit réel validé dans les données publiques.
 
 ## Note
-Cette tâche sera détaillée après validation de la TASK 006.
+Cette tâche sera détaillée uniquement après test réel du workflow de revue.
