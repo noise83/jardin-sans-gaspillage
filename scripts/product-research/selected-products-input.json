@@ -1,0 +1,23 @@
+[
+  {
+    "targetProductId": "cuve-simple-300l",
+    "sourceUrl": "",
+    "notes": "Placeholder pour une future selection manuelle. Ne pas ajouter de vraie URL sans verification editoriale.",
+    "merchant": "Amazon",
+    "status": "candidate"
+  },
+  {
+    "targetProductId": "recuperateur-500l-compromis",
+    "sourceUrl": "#",
+    "notes": "Placeholder approuve sans ASIN pour verifier que le script signale les entrees incompletes.",
+    "merchant": "Amazon",
+    "status": "approved"
+  },
+  {
+    "targetProductId": "cuve-1000l-grande-capacite",
+    "sourceUrl": "",
+    "notes": "Placeholder rejete, ignore par le script d'import brouillon.",
+    "merchant": "Amazon",
+    "status": "rejected"
+  }
+]
