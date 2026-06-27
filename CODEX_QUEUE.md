@@ -66,59 +66,9 @@ Checklist de revue, validateur de brouillon et rapport de validation ajoutés. C
 
 ---
 
-# TASK 008 — NEXT
+# TASK 008 — DONE
 
-## Objectif
-Marquer le produit cible `recuperateur-500l-compromis` comme candidat prioritaire à rechercher, sans l’approuver et sans intégrer de produit public.
-
-## Pourquoi
-Le premier produit à chercher doit être un récupérateur d’eau de pluie 500 L classique, bon compromis, adapté à un jardin familial modéré. C’est le meilleur premier test commercial et éditorial. Mais aucune vraie URL produit n’a encore été validée, donc il ne faut pas mettre `approved`.
-
-## Fichiers concernés
-- `scripts/product-research/selected-products-input.json`
-- `scripts/product-research/README.md` si une précision courte est utile
-
-## Ne pas modifier
-- `AGENTS.md`
-- `package.json`
-- `astro.config.mjs`
-- les pages publiques
-- les composants
-- `src/data/products/recuperateurs-eau.json`
-- le moteur d’affiliation
-- les scripts `product-candidates`
-- le design global
-- `CODEX_QUEUE.md`
-
-## À faire
-
-1. Dans `selected-products-input.json`, nettoyer l’entrée `recuperateur-500l-compromis` :
-- garder `targetProductId: "recuperateur-500l-compromis"` ;
-- mettre `sourceUrl` à vide ;
-- mettre `status` à `candidate`, pas `approved` ;
-- ajouter une note claire indiquant que c’est le candidat prioritaire ;
-- préciser dans la note le type de produit recherché : récupérateur eau de pluie environ 500 L, cuve fermée, robinet inclus ou compatible, trop-plein possible, dimensions indiquées, protection UV ou matière opaque, produit neuf, pas IBC, pas occasion.
-
-2. S’assurer qu’aucune entrée placeholder ne reste en `approved` sans URL exploitable.
-
-3. Ne pas ajouter de vraie URL produit.
-
-4. Ne pas modifier les produits publics.
-
-5. Lancer :
-- `node scripts/product-research/parse-selected-products.mjs`
-- `node scripts/product-research/apply-selected-products.mjs`
-- `node scripts/product-research/validate-product-draft.mjs`
-- `npm run build`
-
-## Validation
-- Les scripts passent.
-- Le build passe.
-- Aucun produit public n’est modifié.
-- Le rapport de validation ne signale pas de modification publique.
-- Résumer les fichiers modifiés.
-- Commit et push avec le message :
-  `Mark 500l collector as priority product candidate`
+Produit cible `recuperateur-500l-compromis` marqué comme candidat prioritaire, sans URL réelle et sans approbation prématurée. Commit : `b87bb42 Mark 500l collector as priority product candidate`. Build validé.
 
 ---
 
@@ -136,5 +86,170 @@ Cette tâche ne doit pas être exécutée tant qu’une vraie URL produit Amazon
 - Mettre `status: "approved"` seulement après vérification éditoriale.
 - Lancer les scripts de contrôle avant toute intégration publique.
 
-## Note importante
-Ne pas marquer cette tâche `NEXT` avant validation humaine d’un produit réel.
+---
+
+# TASK 010 — NEXT
+
+## Objectif
+Créer une page longue traîne SEO sur les récupérateurs d’eau de pluie muraux.
+
+## Page à créer
+- `src/pages/recuperation-eau/cuve-murale-recuperateur-eau-pluie/index.astro`
+
+## Ne pas modifier
+- `AGENTS.md`
+- `package.json`
+- `astro.config.mjs`
+- les composants globaux sauf nécessité minime
+- les données produits
+- le moteur d’affiliation
+- les scripts product-research et product-candidates
+- les pages légales
+- le design global
+- `CODEX_QUEUE.md`
+
+## SEO
+- URL : `/recuperation-eau/cuve-murale-recuperateur-eau-pluie/`
+- Title : `Cuve murale pour récupérateur d’eau de pluie : avantages et limites`
+- Meta description : `Découvrez quand choisir une cuve murale de récupération d’eau de pluie, ses avantages, ses limites, les critères d’installation et les erreurs à éviter.`
+- H1 : `Cuve murale pour récupérateur d’eau de pluie : bonne idée ou compromis ?`
+
+## Intention de recherche
+Aider un particulier qui manque de place ou veut une installation plus discrète à comprendre si une cuve murale est adaptée à son jardin, sa terrasse, sa façade ou son passage latéral.
+
+## Structure attendue
+
+### 1. Introduction
+Expliquer qu’une cuve murale est pensée pour gagner de la place et s’intégrer contre un mur, mais qu’elle impose des compromis : profondeur, stabilité, capacité utile, raccordement et accès au robinet.
+
+### 2. Bloc “En résumé”
+Créer un bloc clair :
+- adaptée aux petits jardins, terrasses et passages latéraux ;
+- utile quand une cuve ronde prend trop de place ;
+- plus discrète contre une façade ;
+- capacité parfois limitée ;
+- installation à soigner pour la stabilité ;
+- bon choix si la gouttière est proche et l’usage raisonnable.
+
+### 3. H2 À qui convient une cuve murale ?
+Expliquer :
+- petit jardin ;
+- terrasse ;
+- façade visible ;
+- passage étroit ;
+- massifs proches de la maison ;
+- usage à l’arrosoir.
+Dire clairement que ce n’est pas forcément adapté à un grand potager ou à un usage intensif.
+
+### 4. H2 Les avantages d’un récupérateur d’eau mural
+Inclure :
+- gain de place ;
+- meilleure intégration visuelle ;
+- accès pratique au robinet ;
+- pose près d’une descente de gouttière ;
+- formats 300 à 500 L intéressants pour usage familial modéré.
+
+### 5. H2 Les limites à connaître
+Inclure :
+- capacité souvent plus faible qu’une grosse cuve ;
+- prix parfois plus élevé au litre ;
+- stabilité à surveiller ;
+- profondeur et largeur à vérifier ;
+- accessoires pas toujours inclus ;
+- entretien et nettoyage parfois moins pratiques ;
+- trop-plein indispensable.
+
+### 6. H2 Cuve murale 300 L ou 500 L : comment choisir ?
+Créer un tableau simple :
+Capacité | Usage conseillé | Point de vigilance
+300 L | terrasse, petit jardin, appoint | autonomie faible
+500 L | jardin familial modéré, massifs, petit potager | poids et stabilité
+Plus de 500 L | besoin plus régulier, espace technique | encombrement et installation
+
+Ajouter des liens naturels vers :
+- `/recuperation-eau/recuperateur-eau-pluie-300l/`
+- `/recuperation-eau/recuperateur-eau-pluie-500l/`
+
+### 7. H2 Où installer une cuve murale ?
+Expliquer :
+- près d’une descente de gouttière ;
+- sur sol plat, dur et stable ;
+- contre un mur accessible ;
+- sans bloquer un passage ;
+- avec assez de place pour remplir un arrosoir ;
+- avec une évacuation ou trop-plein prévu.
+
+### 8. H2 Quels accessoires vérifier avant achat ?
+Inclure :
+- robinet ;
+- collecteur de gouttière ;
+- filtre ;
+- kit de raccordement ;
+- trop-plein ;
+- couvercle ;
+- socle ou support ;
+- protection UV.
+
+### 9. H2 Cuve murale ou cuve ronde classique ?
+Comparer sans forcer :
+- cuve murale : meilleure intégration et gain de place ;
+- cuve ronde : souvent plus simple et parfois moins chère ;
+- cuve IBC : volume plus important mais aspect technique.
+Ajouter un lien vers :
+- `/comparatifs/meilleur-recuperateur-eau-pluie/`
+
+### 10. H2 Faut-il une pompe avec une cuve murale ?
+Réponse nuancée : souvent non pour l’arrosoir ; parfois utile si tuyau long, cuve éloignée ou besoin de pression. Ajouter un lien vers :
+- `/arrosage-econome/`
+
+### 11. H2 Erreurs fréquentes
+Inclure :
+- choisir uniquement pour le design ;
+- oublier les dimensions réelles ;
+- négliger le support ;
+- oublier le trop-plein ;
+- acheter sans vérifier les accessoires ;
+- placer la cuve trop loin des plantes ;
+- croire qu’une cuve murale remplace une grosse réserve.
+
+### 12. H2 Verdict
+Conclure qu’une cuve murale est un très bon choix pour gagner de la place et garder une installation propre, à condition de vérifier la capacité, les accessoires, la stabilité et l’usage réel. Pour un potager régulier, il faudra souvent viser 500 L ou compléter avec une autre réserve.
+
+### 13. H2 À lire ensuite
+Créer un bloc de maillage interne vers :
+- `/recuperation-eau/`
+- `/recuperation-eau/recuperateur-eau-pluie-300l/`
+- `/recuperation-eau/recuperateur-eau-pluie-500l/`
+- `/recuperation-eau/cuve-eau-pluie-1000l/`
+- `/comparatifs/meilleur-recuperateur-eau-pluie/`
+- `/outils/calculateur-taille-cuve/`
+
+## Données structurées
+Ajouter uniquement :
+- `BreadcrumbList`
+- `Article`
+Ne pas ajouter `Product`, `Review` ou `AggregateRating`.
+Auteur/éditeur : `Jardin Sans Gaspillage`.
+
+## Contraintes
+- Ton expert, accessible, concret.
+- Paragraphes courts.
+- Ne pas ajouter d’affiliation directe.
+- Ne pas prétendre à des tests produits.
+- Ne pas créer de tableau produit affilié.
+- Ne pas ajouter de dépendance.
+- Ne pas faire de refonte globale.
+- Garder le style “carnet de terrain moderne”.
+
+## Validation
+- `npm run build` doit passer.
+- Résumer les fichiers créés/modifiés.
+- Commit et push sur `main` avec le message :
+  `Add wall mounted rainwater tank guide`
+
+---
+
+# TASK 011 — TODO
+
+## Objectif
+Après création de la page cuve murale, renforcer le maillage depuis la page pilier et le comparatif principal.
