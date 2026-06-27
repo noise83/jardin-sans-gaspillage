@@ -75,20 +75,36 @@ Faire un audit court du silo récupération d’eau après création des pages 3
 
 ---
 
-# TASK 005 — NEXT
+# TASK 005 — DONE
 
 ## Objectif
 Préparer un workflow local de recherche produits pour les récupérateurs d’eau, sans scraper Amazon, sans API externe et sans utiliser de clés.
 
+## Résultat
+- Workflow local de recherche produits ajouté dans `scripts/product-research/`.
+- Génération de liens de recherche Amazon de travail sans tag affilié.
+- Extraction locale d’ASIN depuis des URLs copiées manuellement.
+- Aucun scraping, aucune API, aucune clé, aucune modification publique.
+- Commit : `b416c16 Add product research workflow`
+- Build validé par Codex.
+
+---
+
+# TASK 006 — NEXT
+
+## Objectif
+Créer un import contrôlé depuis des produits sélectionnés vers un brouillon de données produits publiques, sans modifier automatiquement `src/data/products/recuperateurs-eau.json`.
+
 ## Pourquoi
-Le site a déjà une base produits et un moteur d’affiliation local, mais les ASIN sont encore vides. Cette tâche doit créer une brique de travail utile pour préparer les futurs ASIN et candidats produits, sans automatisation risquée.
+On veut préparer l’étape d’intégration des ASIN, mais garder une validation humaine avant toute modification publique. Le script doit produire un brouillon contrôlable, pas pousser directement des produits réels dans le site.
+
+## Fichiers à modifier
+- `scripts/product-research/README.md`
 
 ## Fichiers à créer
-- `scripts/product-research/README.md`
-- `scripts/product-research/recuperateurs-eau-search-plan.json`
-- `scripts/product-research/generate-research-links.mjs`
-- `scripts/product-research/selected-products-input.example.json`
-- `scripts/product-research/parse-selected-products.mjs`
+- `scripts/product-research/selected-products-input.json`
+- `scripts/product-research/apply-selected-products.mjs`
+- `scripts/product-research/output/recuperateurs-eau-products-draft.json`
 
 ## Ne pas modifier
 - `AGENTS.md`
@@ -96,50 +112,18 @@ Le site a déjà une base produits et un moteur d’affiliation local, mais les 
 - `astro.config.mjs`
 - les pages du site
 - les composants
-- les données produits publiques dans `src/data/products/`
-- le moteur d’affiliation existant
-- les scripts `product-candidates` existants
+- le moteur d’affiliation
+- les scripts `product-candidates`
 - le design global
+
+## Règle importante
+Ne pas modifier `src/data/products/recuperateurs-eau.json` dans cette tâche. Le script doit seulement générer un fichier brouillon dans `scripts/product-research/output/`.
 
 ## À faire
 
-### 1. README
-Créer un README qui explique :
-- ce dossier prépare la recherche produits de façon locale et contrôlée ;
-- il ne scrape pas Amazon ;
-- il n’appelle aucune API ;
-- il n’invente pas de prix, de disponibilité ou d’avis ;
-- il sert à générer des liens de recherche et à préparer l’extraction d’ASIN depuis des URL produits copiées manuellement ;
-- les données produites ne doivent pas être affichées publiquement sans validation éditoriale ;
-- les futures intégrations devront utiliser API officielle ou flux marchands autorisés.
+### 1. Créer `selected-products-input.json`
+Créer un fichier de travail basé sur `selected-products-input.example.json`, mais destiné aux vraies sélections futures.
 
-### 2. Plan de recherche JSON
-Créer `recuperateurs-eau-search-plan.json` avec 6 familles de recherche :
-- récupérateur 300 L petit espace
-- récupérateur mural 300 à 500 L
-- récupérateur 500 L bon compromis
-- récupérateur design 500 L type pierre / mural décoratif
-- cuve eau de pluie 1000 L
-- cuve IBC 1000 L
-
-Chaque entrée doit contenir :
-- `id`
-- `label`
-- `intent`
-- `queries` : liste de 3 à 5 recherches Amazon possibles
-- `mustCheck` : critères à vérifier manuellement, par exemple capacité, accessoires, trop-plein, collecteur, dimensions, avis, état, origine de la cuve, protection UV
-- `avoid` : signaux à éviter, par exemple produit flou, capacité non claire, avis trop faibles, accessoires indispensables non précisés
-
-### 3. Script generate-research-links.mjs
-Créer un script Node sans dépendance qui :
-- lit `recuperateurs-eau-search-plan.json`
-- génère pour chaque query une URL de recherche Amazon.fr du type `https://www.amazon.fr/s?k=...`
-- n’ajoute pas de tag affilié sur ces URLs de recherche, car ce sont des liens de travail non publics
-- affiche en console les familles et URLs de recherche
-- écrit aussi un fichier généré : `scripts/product-research/output/recuperateurs-eau-research-links.json`
-
-### 4. Fichier selected-products-input.example.json
-Créer un exemple de fichier pour coller plus tard des produits repérés manuellement.
 Chaque entrée doit contenir :
 - `targetProductId`
 - `sourceUrl`
@@ -147,42 +131,67 @@ Chaque entrée doit contenir :
 - `merchant`
 - `status`
 
-Mettre des exemples fictifs avec `sourceUrl` vide ou `#`, pas de vraie URL produit.
+Règles :
+- utiliser des entrées placeholder avec `sourceUrl` vide ou `#` ;
+- `status` doit pouvoir être `candidate`, `approved`, `rejected` ;
+- ne pas ajouter de vraie URL produit dans cette tâche ;
+- ne pas inventer de prix, d’avis ou de disponibilité.
 
-### 5. Script parse-selected-products.mjs
+### 2. Créer `apply-selected-products.mjs`
 Créer un script Node sans dépendance qui :
-- lit `selected-products-input.example.json`
-- tente d’extraire un ASIN depuis une URL Amazon si elle existe
-- supporte au moins les formats `/dp/ASIN`, `/gp/product/ASIN` et `/product/ASIN`
-- si aucun ASIN n’est trouvé, met `asin` à vide
-- affiche un résumé en console
-- écrit un fichier généré : `scripts/product-research/output/selected-products-parsed.json`
-- ne modifie pas `src/data/products/recuperateurs-eau.json`
+- lit `src/data/products/recuperateurs-eau.json` ;
+- lit `scripts/product-research/selected-products-input.json` ;
+- extrait les ASIN depuis `sourceUrl` avec les mêmes formats que `parse-selected-products.mjs` : `/dp/ASIN`, `/gp/product/ASIN`, `/product/ASIN` ;
+- ne prend en compte que les entrées avec `status: "approved"` ;
+- ignore les entrées `candidate` et `rejected` ;
+- cherche le produit cible via `targetProductId` ;
+- génère une copie des produits avec `asin` rempli uniquement quand un ASIN valide est trouvé ;
+- conserve les autres champs existants ;
+- écrit le résultat dans `scripts/product-research/output/recuperateurs-eau-products-draft.json` ;
+- affiche un résumé console : nombre d’entrées lues, approuvées, ASIN extraits, produits modifiés, erreurs.
+
+### 3. Sécurité du script
+Le script doit :
+- ne jamais modifier `src/data/products/recuperateurs-eau.json` ;
+- signaler les `targetProductId` inconnus ;
+- signaler les entrées approved sans ASIN ;
+- ne jamais ajouter de prix, disponibilité, note ou avis ;
+- ne jamais ajouter de tag affilié ;
+- ne jamais appeler Amazon, API externe ou réseau.
+
+### 4. Mettre à jour le README
+Ajouter une section expliquant le workflow :
+1. générer les liens de recherche ;
+2. chercher manuellement les produits ;
+3. copier les URLs dans `selected-products-input.json` ;
+4. mettre `status: "approved"` seulement après vérification éditoriale ;
+5. lancer `parse-selected-products.mjs` pour contrôle ;
+6. lancer `apply-selected-products.mjs` pour générer un brouillon ;
+7. relire le brouillon avant toute modification de `src/data/products/recuperateurs-eau.json`.
 
 ## Contraintes
 - Ne pas ajouter de dépendance.
 - Ne pas scraper Amazon.
 - Ne pas appeler d’API externe.
-- Ne pas générer de prix, de disponibilité ou d’avis.
-- Ne pas activer de liens affiliés.
 - Ne pas modifier les pages publiques.
-- Ne pas toucher au moteur d’affiliation.
-- Ne pas ajouter de données inventées comme réelles.
+- Ne pas modifier les produits publics.
+- Ne pas activer d’affiliation directe.
+- Ne pas inventer de données commerciales.
 
 ## Validation
-- `node scripts/product-research/generate-research-links.mjs` doit fonctionner.
 - `node scripts/product-research/parse-selected-products.mjs` doit fonctionner.
+- `node scripts/product-research/apply-selected-products.mjs` doit fonctionner.
 - `npm run build` doit passer.
-- Résumer les fichiers créés.
+- Résumer les fichiers créés/modifiés.
 - Commit et push avec le message :
-  `Add product research workflow`
+  `Add controlled product import draft workflow`
 
 ---
 
-# TASK 006 — TODO
+# TASK 007 — TODO
 
 ## Objectif
-Créer ensuite un import contrôlé depuis des produits sélectionnés vers les fichiers produits publics, après validation humaine des ASIN.
+Après validation du workflow d’import brouillon, créer une procédure de revue manuelle pour intégrer les ASIN dans les données publiques sans casser le site.
 
 ## Note
-Cette tâche sera détaillée après validation de la TASK 005.
+Cette tâche sera détaillée après validation de la TASK 006.
