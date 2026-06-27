@@ -48,34 +48,58 @@ Renforcer le maillage interne entre les pages 300 L, 500 L, 1000 L, la page pili
 
 ---
 
-# TASK 003 — NEXT
+# TASK 003 — DONE
 
 ## Objectif
 Ajouter des données structurées simples aux pages longues traîne 300 L, 500 L et 1000 L.
 
-## Fichiers concernés
-- `src/pages/recuperation-eau/recuperateur-eau-pluie-300l/index.astro`
-- `src/pages/recuperation-eau/recuperateur-eau-pluie-500l/index.astro`
-- `src/pages/recuperation-eau/cuve-eau-pluie-1000l/index.astro`
+## Résultat
+- JSON-LD ajouté sur les pages 300 L, 500 L et 1000 L.
+- Types ajoutés : `BreadcrumbList`, `Article`.
+- Aucun schema `Product`, `Review` ou `AggregateRating`.
+- Commit : `0234863 Add structured data to rainwater capacity guides`
+- Build validé par Codex.
 
-## À faire
-- Ajouter `BreadcrumbList`.
-- Ajouter `Article`.
-- Ne pas ajouter `Product`, `Review` ou `AggregateRating`.
-- Ne pas inventer d’auteur personnel ; utiliser `Jardin Sans Gaspillage`.
-- Les URL doivent utiliser `https://jardinsansgaspillage.fr`.
-- Les titres et descriptions du JSON-LD doivent correspondre aux pages concernées.
+---
 
-## Contraintes
-- Le JSON-LD doit correspondre au contenu visible.
-- Ne pas ajouter de dépendance.
-- Ne pas modifier le contenu visible sauf nécessité technique.
-- Ne pas modifier `AGENTS.md`.
-- Ne pas toucher au moteur d’affiliation.
-- Ne pas ajouter de schema `Product` tant que les produits ne sont pas réellement liés/offrés.
+# TASK 004 — NEXT
+
+## Objectif
+Faire un audit court du silo récupération d’eau après création des pages 300 L, 500 L et 1000 L.
+
+## Important
+Cette tâche est un audit uniquement. Ne modifier aucun fichier, ne créer aucun commit et ne faire aucun push.
+
+## À vérifier
+- Les routes suivantes existent et se buildent :
+  - `/recuperation-eau/`
+  - `/recuperation-eau/recuperateur-eau-pluie-300l/`
+  - `/recuperation-eau/recuperateur-eau-pluie-500l/`
+  - `/recuperation-eau/cuve-eau-pluie-1000l/`
+  - `/comparatifs/meilleur-recuperateur-eau-pluie/`
+- Chaque page a un title unique.
+- Chaque page a une meta description.
+- Chaque page a un seul H1.
+- Les canonicals utilisent bien `https://jardinsansgaspillage.fr`.
+- Les pages 300 L, 500 L et 1000 L ont bien un JSON-LD `BreadcrumbList` et `Article`.
+- Les pages 300 L, 500 L et 1000 L n’ont pas de schema `Product`, `Review` ou `AggregateRating`.
+- Le maillage entre 300 L, 500 L, 1000 L, la page pilier et le comparatif principal est présent.
+- Aucune page ne prétend que des produits ont été testés.
+- Aucune affiliation directe n’a été ajoutée sur les guides capacité.
 
 ## Validation
-- `npm run build` doit passer.
-- Résumer les fichiers modifiés.
-- Commit et push avec le message :
-  `Add structured data to rainwater capacity guides`
+- Lancer `npm run build`.
+- Ne modifier aucun fichier.
+- Ne faire aucun commit.
+- Ne faire aucun push.
+- Rendre un résumé clair : points OK, problèmes éventuels, corrections recommandées.
+
+---
+
+# TASK 005 — TODO
+
+## Objectif
+Préparer la prochaine étape produit/affiliation sans scraper Amazon et sans utiliser de clés API.
+
+## Note
+Cette tâche sera détaillée après validation de l’audit du silo récupération d’eau.
