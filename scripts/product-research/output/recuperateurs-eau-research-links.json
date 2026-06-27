@@ -1,0 +1,140 @@
+[
+  {
+    "id": "recuperateur-300l-petit-espace",
+    "label": "Récupérateur 300 L petit espace",
+    "intent": "Trouver des récupérateurs compacts pour terrasse, petit jardin ou usage d'appoint.",
+    "links": [
+      {
+        "query": "récupérateur eau pluie 300l",
+        "url": "https://www.amazon.fr/s?k=r%C3%A9cup%C3%A9rateur%20eau%20pluie%20300l"
+      },
+      {
+        "query": "cuve eau pluie 300 litres",
+        "url": "https://www.amazon.fr/s?k=cuve%20eau%20pluie%20300%20litres"
+      },
+      {
+        "query": "récupérateur eau pluie terrasse 300 l",
+        "url": "https://www.amazon.fr/s?k=r%C3%A9cup%C3%A9rateur%20eau%20pluie%20terrasse%20300%20l"
+      },
+      {
+        "query": "récupérateur eau pluie compact 300l",
+        "url": "https://www.amazon.fr/s?k=r%C3%A9cup%C3%A9rateur%20eau%20pluie%20compact%20300l"
+      }
+    ]
+  },
+  {
+    "id": "recuperateur-mural-300-500l",
+    "label": "Récupérateur mural 300 à 500 L",
+    "intent": "Repérer des cuves murales peu profondes pour façade, passage latéral ou zone visible.",
+    "links": [
+      {
+        "query": "récupérateur eau pluie mural 300l",
+        "url": "https://www.amazon.fr/s?k=r%C3%A9cup%C3%A9rateur%20eau%20pluie%20mural%20300l"
+      },
+      {
+        "query": "récupérateur eau pluie mural 500l",
+        "url": "https://www.amazon.fr/s?k=r%C3%A9cup%C3%A9rateur%20eau%20pluie%20mural%20500l"
+      },
+      {
+        "query": "cuve murale eau pluie 300 500 l",
+        "url": "https://www.amazon.fr/s?k=cuve%20murale%20eau%20pluie%20300%20500%20l"
+      },
+      {
+        "query": "récupérateur eau pluie slim mural",
+        "url": "https://www.amazon.fr/s?k=r%C3%A9cup%C3%A9rateur%20eau%20pluie%20slim%20mural"
+      }
+    ]
+  },
+  {
+    "id": "recuperateur-500l-compromis",
+    "label": "Récupérateur 500 L bon compromis",
+    "intent": "Identifier des récupérateurs équilibrés pour jardin familial modéré et petits potagers.",
+    "links": [
+      {
+        "query": "récupérateur eau pluie 500l",
+        "url": "https://www.amazon.fr/s?k=r%C3%A9cup%C3%A9rateur%20eau%20pluie%20500l"
+      },
+      {
+        "query": "cuve eau pluie 500 litres jardin",
+        "url": "https://www.amazon.fr/s?k=cuve%20eau%20pluie%20500%20litres%20jardin"
+      },
+      {
+        "query": "récupérateur eau pluie 500 l avec robinet",
+        "url": "https://www.amazon.fr/s?k=r%C3%A9cup%C3%A9rateur%20eau%20pluie%20500%20l%20avec%20robinet"
+      },
+      {
+        "query": "cuve récupération eau pluie 500l",
+        "url": "https://www.amazon.fr/s?k=cuve%20r%C3%A9cup%C3%A9ration%20eau%20pluie%20500l"
+      }
+    ]
+  },
+  {
+    "id": "recuperateur-design-500l",
+    "label": "Récupérateur design 500 L type pierre ou mural décoratif",
+    "intent": "Trouver des cuves 500 L plus intégrées visuellement pour terrasse ou façade.",
+    "links": [
+      {
+        "query": "récupérateur eau pluie design 500l",
+        "url": "https://www.amazon.fr/s?k=r%C3%A9cup%C3%A9rateur%20eau%20pluie%20design%20500l"
+      },
+      {
+        "query": "cuve eau pluie decorative 500 l",
+        "url": "https://www.amazon.fr/s?k=cuve%20eau%20pluie%20decorative%20500%20l"
+      },
+      {
+        "query": "récupérateur eau pluie imitation pierre 500l",
+        "url": "https://www.amazon.fr/s?k=r%C3%A9cup%C3%A9rateur%20eau%20pluie%20imitation%20pierre%20500l"
+      },
+      {
+        "query": "cuve murale décorative eau pluie 500l",
+        "url": "https://www.amazon.fr/s?k=cuve%20murale%20d%C3%A9corative%20eau%20pluie%20500l"
+      }
+    ]
+  },
+  {
+    "id": "cuve-eau-pluie-1000l",
+    "label": "Cuve eau de pluie 1000 L",
+    "intent": "Préparer une sélection de cuves 1000 L pour potager, jardin moyen et usage régulier.",
+    "links": [
+      {
+        "query": "cuve eau pluie 1000l",
+        "url": "https://www.amazon.fr/s?k=cuve%20eau%20pluie%201000l"
+      },
+      {
+        "query": "récupérateur eau pluie 1000 litres",
+        "url": "https://www.amazon.fr/s?k=r%C3%A9cup%C3%A9rateur%20eau%20pluie%201000%20litres"
+      },
+      {
+        "query": "cuve récupération eau pluie 1000 l jardin",
+        "url": "https://www.amazon.fr/s?k=cuve%20r%C3%A9cup%C3%A9ration%20eau%20pluie%201000%20l%20jardin"
+      },
+      {
+        "query": "cuve eau pluie 1000l avec robinet",
+        "url": "https://www.amazon.fr/s?k=cuve%20eau%20pluie%201000l%20avec%20robinet"
+      }
+    ]
+  },
+  {
+    "id": "cuve-ibc-1000l",
+    "label": "Cuve IBC 1000 L",
+    "intent": "Repérer des IBC 1000 L pertinentes pour zone technique et meilleur volume par euro.",
+    "links": [
+      {
+        "query": "cuve ibc 1000l eau pluie",
+        "url": "https://www.amazon.fr/s?k=cuve%20ibc%201000l%20eau%20pluie"
+      },
+      {
+        "query": "ibc 1000 litres récupération eau",
+        "url": "https://www.amazon.fr/s?k=ibc%201000%20litres%20r%C3%A9cup%C3%A9ration%20eau"
+      },
+      {
+        "query": "cuve ibc 1000l reconditionnée",
+        "url": "https://www.amazon.fr/s?k=cuve%20ibc%201000l%20reconditionn%C3%A9e"
+      },
+      {
+        "query": "conteneur ibc 1000 l eau pluie",
+        "url": "https://www.amazon.fr/s?k=conteneur%20ibc%201000%20l%20eau%20pluie"
+      }
+    ]
+  }
+]

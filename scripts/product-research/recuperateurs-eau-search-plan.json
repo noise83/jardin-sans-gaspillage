@@ -1,0 +1,158 @@
+[
+  {
+    "id": "recuperateur-300l-petit-espace",
+    "label": "Récupérateur 300 L petit espace",
+    "intent": "Trouver des récupérateurs compacts pour terrasse, petit jardin ou usage d'appoint.",
+    "queries": [
+      "récupérateur eau pluie 300l",
+      "cuve eau pluie 300 litres",
+      "récupérateur eau pluie terrasse 300 l",
+      "récupérateur eau pluie compact 300l"
+    ],
+    "mustCheck": [
+      "capacité réelle",
+      "dimensions",
+      "robinet inclus",
+      "collecteur compatible",
+      "trop-plein",
+      "couvercle fermé"
+    ],
+    "avoid": [
+      "capacité non claire",
+      "accessoires indispensables non précisés",
+      "produit flou",
+      "avis trop faibles"
+    ]
+  },
+  {
+    "id": "recuperateur-mural-300-500l",
+    "label": "Récupérateur mural 300 à 500 L",
+    "intent": "Repérer des cuves murales peu profondes pour façade, passage latéral ou zone visible.",
+    "queries": [
+      "récupérateur eau pluie mural 300l",
+      "récupérateur eau pluie mural 500l",
+      "cuve murale eau pluie 300 500 l",
+      "récupérateur eau pluie slim mural"
+    ],
+    "mustCheck": [
+      "profondeur",
+      "stabilité",
+      "fixation ou support",
+      "robinet inclus",
+      "collecteur",
+      "protection UV"
+    ],
+    "avoid": [
+      "dimensions absentes",
+      "capacité non claire",
+      "support fragile",
+      "accessoires non listés"
+    ]
+  },
+  {
+    "id": "recuperateur-500l-compromis",
+    "label": "Récupérateur 500 L bon compromis",
+    "intent": "Identifier des récupérateurs équilibrés pour jardin familial modéré et petits potagers.",
+    "queries": [
+      "récupérateur eau pluie 500l",
+      "cuve eau pluie 500 litres jardin",
+      "récupérateur eau pluie 500 l avec robinet",
+      "cuve récupération eau pluie 500l"
+    ],
+    "mustCheck": [
+      "capacité",
+      "dimensions",
+      "socle recommandé",
+      "robinet",
+      "collecteur",
+      "trop-plein",
+      "avis"
+    ],
+    "avoid": [
+      "avis trop faibles",
+      "collecteur absent si indispensable",
+      "prix attractif mais accessoires manquants",
+      "fiche produit imprécise"
+    ]
+  },
+  {
+    "id": "recuperateur-design-500l",
+    "label": "Récupérateur design 500 L type pierre ou mural décoratif",
+    "intent": "Trouver des cuves 500 L plus intégrées visuellement pour terrasse ou façade.",
+    "queries": [
+      "récupérateur eau pluie design 500l",
+      "cuve eau pluie decorative 500 l",
+      "récupérateur eau pluie imitation pierre 500l",
+      "cuve murale décorative eau pluie 500l"
+    ],
+    "mustCheck": [
+      "dimensions",
+      "aspect réel",
+      "matière",
+      "robinet",
+      "raccordement",
+      "protection UV",
+      "avis"
+    ],
+    "avoid": [
+      "photos peu claires",
+      "capacité approximative",
+      "prix élevé sans accessoires",
+      "raccords non précisés"
+    ]
+  },
+  {
+    "id": "cuve-eau-pluie-1000l",
+    "label": "Cuve eau de pluie 1000 L",
+    "intent": "Préparer une sélection de cuves 1000 L pour potager, jardin moyen et usage régulier.",
+    "queries": [
+      "cuve eau pluie 1000l",
+      "récupérateur eau pluie 1000 litres",
+      "cuve récupération eau pluie 1000 l jardin",
+      "cuve eau pluie 1000l avec robinet"
+    ],
+    "mustCheck": [
+      "capacité",
+      "encombrement",
+      "poids",
+      "robinet",
+      "sortie basse",
+      "trop-plein",
+      "collecteur",
+      "protection UV"
+    ],
+    "avoid": [
+      "support non adapté",
+      "origine floue",
+      "accessoires essentiels absents",
+      "dimensions non indiquées"
+    ]
+  },
+  {
+    "id": "cuve-ibc-1000l",
+    "label": "Cuve IBC 1000 L",
+    "intent": "Repérer des IBC 1000 L pertinentes pour zone technique et meilleur volume par euro.",
+    "queries": [
+      "cuve ibc 1000l eau pluie",
+      "ibc 1000 litres récupération eau",
+      "cuve ibc 1000l reconditionnée",
+      "conteneur ibc 1000 l eau pluie"
+    ],
+    "mustCheck": [
+      "état",
+      "origine de la cuve",
+      "usage alimentaire antérieur",
+      "vanne",
+      "palette",
+      "armature",
+      "protection lumière"
+    ],
+    "avoid": [
+      "origine inconnue",
+      "cuve sale",
+      "vanne abîmée",
+      "usage précédent non précisé",
+      "photos insuffisantes"
+    ]
+  }
+]

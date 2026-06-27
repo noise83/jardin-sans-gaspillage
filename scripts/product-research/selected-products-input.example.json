@@ -1,0 +1,23 @@
+[
+  {
+    "targetProductId": "cuve-simple-300l",
+    "sourceUrl": "#",
+    "notes": "Exemple fictif pour un récupérateur compact. Remplacer par une URL copiée manuellement après validation.",
+    "merchant": "Amazon",
+    "status": "manual-placeholder"
+  },
+  {
+    "targetProductId": "recuperateur-500l-compromis",
+    "sourceUrl": "",
+    "notes": "Exemple fictif pour un modèle 500 L bon compromis.",
+    "merchant": "Amazon",
+    "status": "manual-placeholder"
+  },
+  {
+    "targetProductId": "cuve-1000l-grande-capacite",
+    "sourceUrl": "#",
+    "notes": "Exemple fictif pour une cuve 1000 L à vérifier manuellement.",
+    "merchant": "Amazon",
+    "status": "manual-placeholder"
+  }
+]
