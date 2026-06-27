@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "generatedAt": "2026-06-27T16:21:08.696Z",
+  "summary": {
+    "publicProducts": 6,
+    "draftProducts": 6,
+    "asinChanges": 0,
+    "otherFieldChanges": 0,
+    "forbiddenFields": 0,
+    "invalidAsins": 0,
+    "missingProducts": 0,
+    "unknownDraftProducts": 0,
+    "errors": 0,
+    "warnings": 0
+  },
+  "errors": [],
+  "warnings": [],
+  "missingProducts": [],
+  "unknownDraftProducts": [],
+  "asinChanges": [],
+  "invalidAsins": [],
+  "otherFieldChanges": [],
+  "forbiddenFields": []
+}

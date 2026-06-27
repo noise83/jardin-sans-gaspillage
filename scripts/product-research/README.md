@@ -35,3 +35,16 @@ Ce workflow prepare un brouillon de donnees produits, sans modifier automatiquem
 7. Relire le brouillon avant toute modification manuelle de `src/data/products/recuperateurs-eau.json`.
 
 Le script d'application ne scrape pas Amazon, n'appelle aucune API externe, n'ajoute aucun tag affilie et n'ecrit jamais dans `src/data/products/recuperateurs-eau.json`.
+
+## Revue avant integration publique
+
+Avant toute modification manuelle de `src/data/products/recuperateurs-eau.json`, il faut valider le brouillon et effectuer une revue humaine.
+
+1. Generer le brouillon avec `node scripts/product-research/apply-selected-products.mjs`.
+2. Valider le brouillon avec `node scripts/product-research/validate-product-draft.mjs`.
+3. Lire le rapport `scripts/product-research/output/product-draft-validation-report.json`.
+4. Lire `scripts/product-research/PRODUCT_REVIEW_CHECKLIST.md`.
+5. Modifier `src/data/products/recuperateurs-eau.json` uniquement apres validation humaine.
+6. Lancer `npm run build` apres toute integration publique.
+
+Le validateur signale les ASIN modifies, les ASIN au format non plausible, les champs commerciaux interdits et les changements editoriaux hors ASIN. Un rapport sans erreur technique ne remplace pas la revue humaine.
